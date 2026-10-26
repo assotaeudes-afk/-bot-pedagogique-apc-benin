@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bot pédagogique APC Bénin</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f0f5f1;margin:0;color:#183323;line-height:1.5}
+header{background:#176534;color:white;padding:20px;text-align:center}
+main{max-width:900px;margin:20px auto;padding:12px}
+section{background:white;padding:18px;border-radius:10px;margin-bottom:16px}
+label{display:block;margin-top:14px;font-weight:bold}
+input,select,textarea{width:100%;padding:11px;margin-top:6px;border:1px solid #aaa;border-radius:6px;font-size:16px}
+textarea{min-height:75px}
+button{background:#176534;color:white;padding:12px 16px;border:0;border-radius:6px;margin:12px 8px 0 0;font-size:16px}
+#fiche{display:none}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+td,th{border:1px solid #888;padding:8px;text-align:left;vertical-align:top}
+th{background:#e5efe7}
+.note{font-size:14px;color:#45594b}
+@media(max-width:600px){td,th{padding:5px;font-size:13px}}
+@media print{
+ @page{margin:12mm}
+ body{background:white;color:black;font-size:10pt}
+ header,.formulaire,.intro,.actions,footer{display:none!important}
+ main{max-width:none;margin:0;padding:0}
+ #fiche{display:block!important;border:0;padding:0}
+ h2,h3{break-after:avoid}
+ tr{break-inside:avoid}
+ th{background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ td,th{padding:5px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Bot pédagogique APC Bénin</h1>
+<p>Préparation des fiches pédagogiques du primaire</p>
+</header>
+
+<main>
+<section class="formulaire">
+<h2>Préparer une leçon</h2>
+<p class="note">Renseignez les informations disponibles. Adaptez toujours la fiche au programme officiel et au niveau des élèves.</p>
+
+<label for="classe">Classe</label>
+<select id="classe">
+<option>CI</option><option>CP</option><option>CE1</option>
+<option>CE2</option><option>CM1</option><option>CM2</option>
+</select>
+
+<label for="discipline">Discipline</label>
+<select id="discipline">
+<option>Français</option><option>Mathématiques</option>
+<option>Éducation sociale</option><option>EST</option>
+<option>Éducation artistique</option><option>EPS</option>
+</select>
+
+<label for="sous">Sous-discipline</label>
+<input id="sous" placeholder="Ex. : Arithmétique, Lecture, Géométrie">
+
+<label for="ecole">École</label>
+<input id="ecole" placeholder="Nom de l'école">
+
+<label for="enseignant">Enseignant(e)</label>
+<input id="enseignant" placeholder="Nom de l'enseignant(e)">
+
+<label for="date">Date</label>
+<input id="date" type="date">
+
+<label for="duree">Durée de la séance</label>
+<input id="duree" placeholder="Ex. : 45 minutes">
+
+<label for="titre">Titre de la leçon</label>
+<input id="titre" placeholder="Ex. : Addition de nombres entiers" required>
+
+<label for="competence">Compétence visée</label>
+<textarea id="competence" placeholder="Ce que l'élève devra être capable de faire"></textarea>
+
+<label for="objectif">Objectif spécifique</label>
+<textarea id="objectif" placeholder="Apprentissage précis attendu à la fin de la séance"></textarea>
+
+<label for="situation">Situation d'apprentissage</label>
+<textarea id="situation" placeholder="Situation concrète ou problème proposé aux élèves"></textarea>
+
+<label for="materiel">Matériel didactique</label>
+<input id="materiel" placeholder="Tableau, ardoises, images, cahiers...">
+
+<button type="button" onclick="generer()">Générer la fiche pédagogique</button>
+</section>
+
+<section id="fiche">
+<h2 style="text-align:center">FICHE PÉDAGOGIQUE APC</h2>
+<div id="entete"></div>
+
+<h3>1. Compétence visée</h3>
+<p id="c"></p>
+
+<h3>2. Objectif spécifique</h3>
+<p id="o"></p>
+
+<h3>3. Situation d'apprentissage</h3>
+<p id="s"></p>
+
+<h3>4. Déroulement de la séance</h3>
+<table>
+<thead>
+<tr>
+<th>PHASES ET CONSIGNES DE L'ENSEIGNANT</th>
+<th>RÉSULTATS ATTENDUS ET ACTIVITÉS DES ÉLÈVES</th>
+</tr>
+</thead>
+<tbody id="phases"></tbody>
+</table>
+
+<h3>5. Évaluation</h3>
+<p id="evaluation"></p>
+
+<h3>6. Remédiation et consolidation</h3>
+<p id="remediation"></p>
+
+<h3>7. Retour et projection</h3>
+<p id="projection"></p>
+
+<h3>8. Notes personnelles de l'enseignant(e)</h3>
+<p style="min-height:65px;border-bottom:1px dotted #555"></p>
+
+<div class="actions">
+<button type="button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+</div>
+<p class="note">Fiche indicative à vérifier et à adapter aux programmes officiels en vigueur au Bénin.</p>
+</section>
+
+<p class="intro note">Prototype pédagogique : l'enseignant reste responsable de l'adaptation et de la validation du contenu.</p>
+</main>
+
+<script>
+function lire(id){
+ return document.getElementById(id).value.trim();
+}
+
+function securiser(texte){
+ return String(texte).replace(/[&<>"']/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+ });
+}
+
+function generer(){
+ if(!lire('titre')){
+  alert('Veuillez saisir le titre de la leçon.');
+  document.getElementById('titre').focus();
+  return;
+ }
+
+ const v=id=>securiser(lire(id));
+
+ document.getElementById('entete').innerHTML=
+ '<p><b>Classe :</b> '+v('classe')+
+ ' | <b>Discipline :</b> '+v('discipline')+
+ '<br><b>Sous-discipline :</b> '+(v('sous')||'À préciser')+
+ '<br><b>École :</b> '+(v('ecole')||'À préciser')+
+ '<br><b>Enseignant(e) :</b> '+(v('enseignant')||'À préciser')+
+ '<br><b>Date :</b> '+(v('date')||'À préciser')+
+ '<br><b>Durée :</b> '+(v('duree')||'À préciser')+
+ '<br><b>Leçon :</b> '+v('titre')+
+ '<br><b>Matériel :</b> '+(v('materiel')||'À préciser')+'</p>';
+
+ document.getElementById('c').textContent=
+ lire('competence')||'À compléter selon le programme officiel.';
+
+ document.getElementById('o').textContent=
+ lire('objectif')||'À préciser selon la compétence visée.';
+
+ document.getElementById('s').textContent=
+ lire('situation')||'À compléter par une situation adaptée aux élèves.';
+
+ const phases=[
+ ['1. Rappel des prérequis',
+ 'Poser des questions sur les connaissances antérieures utiles. Demander aux élèves de justifier leurs réponses.',
+ 'Les élèves rappellent les notions déjà étudiées et mobilisent les acquis nécessaires.'],
+
+ ['2. Mise en situation',
+ 'Présenter la situation d’apprentissage. Faire observer les supports et demander : « Quel problème devons-nous résoudre ? »',
+ 'Les élèves observent, comprennent la situation, reformulent le problème et proposent leurs premières idées.'],
+
+ ['3. Recherche et réalisation',
+ 'Donner une consigne claire. Organiser la recherche individuelle, en binômes ou en groupes. Laisser les élèves chercher et accompagner leur travail.',
+ 'Les élèves recherchent, manipulent si nécessaire, échangent et proposent des démarches ou des solutions.'],
+
+ ['4. Mise en commun',
+ 'Inviter les élèves à présenter leurs résultats. Faire comparer les propositions, justifier les démarches et examiner les erreurs.',
+ 'Les élèves présentent leurs résultats, expliquent leurs démarches, comparent les propositions et corrigent leurs erreurs.'],
+
+ ['5. Synthèse et structuration',
+ 'Guider la formulation de la règle, de la notion ou de la méthode à retenir. Faire expliquer l’essentiel avec les mots des élèves.',
+ 'Les élèves formulent la notion essentielle, expliquent la règle ou la méthode et prennent la trace écrite si nécessaire.'],
+
+ ['6. Évaluation',
+ 'Proposer une tâche individuelle en rapport direct avec la compétence visée. Observer les réponses et vérifier les critères de réussite.',
+ 'Chaque élève réalise la tâche demandée et montre son niveau de maîtrise de l’apprentissage.'],
+
+ ['7. Remédiation et consolidation',
+ 'Repérer les difficultés. Reprendre les notions non maîtrisées avec un exemple guidé, une manipulation ou un exercice adapté. Proposer un approfondissement aux élèves qui réussissent.',
+ 'Les élèves en difficulté reprennent la démarche et corrigent leurs erreurs. Les autres consolident ou approfondissent leurs acquis.'],
+
+ ['8. Retour et projection',
+ 'Demander ce qui a été appris, comment les élèves ont procédé et dans quelle autre situation ils pourront utiliser cet apprentissage.',
+ 'Les élèves résument ce qu’ils ont appris, expliquent leur démarche et proposent une situation de réinvestissement.']
+ ];
+
+ document.getElementById('phases').innerHTML=phases.map(function(p){
+  return '<tr><td><b>'+p[0]+'</b><br><b>Consigne :</b> '+securiser(p[1])+
+  '</td><td>'+securiser(p[2])+'</td></tr>';
+ }).join('');
+
+ document.getElementById('evaluation').textContent=
+ 'Proposer un exercice individuel sur « '+lire('titre')+
+ ' ». Vérifier si l’objectif spécifique est atteint. Adapter les critères à la leçon.';
+
+ document.getElementById('remediation').textContent=
+ 'Reprendre les difficultés constatées avec des exemples, des manipulations ou des exercices différenciés. Prévoir une activité de consolidation.';
+
+ document.getElementById('projection').textContent=
+ 'Faire verbaliser l’essentiel retenu et inviter les élèves à réutiliser l’apprentissage dans une nouvelle situation.';
+
+ document.getElementById('fiche').style.display='block';
+ document.getElementById('fiche').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
