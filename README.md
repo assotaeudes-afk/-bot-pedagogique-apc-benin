@@ -1,5 +1,4 @@
--bot-pedagogique-apc-benin
-Bot pédagogique APC pour les écoles primaires du Bénin
+index.html
 
 <!DOCTYPE html>
 <html lang="fr">
