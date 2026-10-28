@@ -6,210 +6,494 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bot pédagogique APC Bénin</title>
 <style>
-:root{--vert:#176534;--fond:#f0f5f1;--texte:#183323}
-*{box-sizing:border-box}
-body{margin:0;background:var(--fond);color:var(--texte);font-family:Arial,sans-serif;line-height:1.5}
-header{background:var(--vert);color:white;text-align:center;padding:22px 12px}
-header h1{margin:0;font-size:24px}
-main{max-width:1000px;margin:20px auto;padding:0 12px}
-.card{background:white;border-radius:10px;padding:18px;margin-bottom:18px;box-shadow:0 2px 8px #0001}
-h2,h3{color:var(--vert)}
-h2{font-size:21px;margin-top:0}
-h3{font-size:17px;margin-bottom:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.field{margin-bottom:12px}
-label{display:block;font-weight:bold;margin-bottom:4px}
-input,select,textarea{width:100%;padding:10px;border:1px solid #b7c8bb;border-radius:6px;font:inherit;background:white}
-textarea{min-height:75px;resize:vertical}
-button{border:0;border-radius:6px;padding:12px 16px;background:var(--vert);color:white;font-weight:bold;font-size:15px;cursor:pointer;margin:5px 4px 5px 0}
-.secondary{background:#52665a}
-.small{font-size:13px;color:#52665a}
-#fiche{display:none}
-.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:5px 15px}
-.meta p{margin:4px 0}
-table{width:100%;border-collapse:collapse;background:white}
-th,td{border:1px solid #65756a;padding:7px;vertical-align:top;text-align:left}
-th{background:#e2eee5}
-.notes{margin-top:18px;border:1px solid #777;padding:10px;min-height:70px}
-@media(max-width:650px){table{font-size:11px}th,td{padding:4px}}
-@media print{
-body{background:white;color:black;font-size:10pt}
-header{background:white;color:black;padding:4px}
-main{margin:0;padding:0;max-width:none}
-#formulaire,.no-print{display:none!important}
-#fiche{display:block!important}
-.card{box-shadow:none;padding:0;margin:0}
-table{font-size:8pt}
-th,td{padding:4px}
-tr{page-break-inside:avoid}
-@page{size:A4 landscape;margin:9mm}
+:root {
+  --vert: #176534;
+  --vert-clair: #eaf5ed;
+  --fond: #f4f7f4;
+  --texte: #203328;
+  --bordure: #cbd8ce;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+  line-height: 1.5;
+}
+header {
+  background: var(--vert);
+  color: white;
+  padding: 22px 14px;
+  text-align: center;
+}
+header h1 { margin: 0 0 8px; font-size: 25px; }
+header p { margin: 0; }
+main {
+  width: min(100% - 24px, 950px);
+  margin: 20px auto;
+}
+.panel {
+  background: white;
+  border: 1px solid var(--bordure);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+h2 { color: var(--vert); margin-top: 0; }
+label {
+  display: block;
+  font-weight: bold;
+  margin: 13px 0 5px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #9cad9f;
+  border-radius: 7px;
+  background: white;
+  font: inherit;
+}
+textarea { min-height: 90px; resize: vertical; }
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 15px;
+  margin: 8px 5px 0 0;
+  background: var(--vert);
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+button.secondary { background: #46564b; }
+button.light {
+  background: var(--vert-clair);
+  color: var(--vert);
+  border: 1px solid var(--bordure);
+}
+.note {
+  padding: 12px;
+  border-left: 4px solid var(--vert);
+  background: var(--vert-clair);
+  border-radius: 5px;
+}
+#resultat { display: none; }
+.document {
+  background: white;
+  padding: 20px;
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  margin-top: 15px;
+}
+.document h2, .document h3 { text-align: center; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+th, td {
+  border: 1px solid #829286;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: var(--vert-clair); }
+.small { font-size: 13px; color: #536358; }
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+@media print {
+  body { background: white; }
+  header, #formulaire, #programme, .actions, footer {
+    display: none !important;
+  }
+  main { width: 100%; margin: 0; }
+  .panel { border: none; padding: 0; }
+  .document { border: none; padding: 0; }
+  #resultat { display: block !important; }
+  .document { page-break-after: always; }
+  button { display: none; }
 }
 </style>
 </head>
 <body>
+
 <header>
-<h1>Bot pédagogique APC Bénin</h1>
-<p>Préparation de leçons et résumés de cours — CI à CM2</p>
+  <h1>Bot pédagogique APC Bénin</h1>
+  <p>Préparation des leçons et résumés de cours au primaire</p>
 </header>
 
 <main>
-<section id="formulaire" class="card">
-<h2>Préparer un document pédagogique</h2>
-<p class="small">Complète les informations utiles. Les propositions automatiques doivent être adaptées à la notion et au programme de la classe.</p>
+  <section class="panel" id="formulaire">
+    <h2>1. Préparer une leçon</h2>
+    <p class="note">
+      Sélectionne la classe, la discipline et la notion.
+      Complète les informations pour produire une fiche de travail.
+    </p>
 
-<form id="form">
-<h3>1. Informations générales</h3>
-<div class="grid">
-<div class="field"><label for="ecole">École</label><input id="ecole"></div>
-<div class="field"><label for="enseignant">Enseignant(e)</label><input id="enseignant"></div>
-<div class="field"><label for="classe">Classe *</label>
-<select id="classe" required><option value="">Choisir</option><option>CI</option><option>CP</option><option>CE1</option><option>CE2</option><option>CM1</option><option>CM2</option></select></div>
-<div class="field"><label for="discipline">Discipline *</label>
-<select id="discipline" required><option value="">Choisir</option><option>Français</option><option>Mathématiques</option><option>Éducation sociale</option><option>EST</option><option>Éducation artistique</option><option>EPS</option></select></div>
-<div class="field"><label for="domaine">Sous-discipline / domaine</label><input id="domaine" placeholder="Ex. : Arithmétique, Histoire, Chant"></div>
-<div class="field"><label for="typeDoc">Type de document *</label>
-<select id="typeDoc"><option>Fiche de préparation complète</option><option>Résumé de cours</option></select></div>
-<div class="field"><label for="theme">Thème</label><input id="theme"></div>
-<div class="field"><label for="sa">Situation d’apprentissage</label><textarea id="sa"></textarea></div>
-<div class="field"><label for="seance">Situation / séance n°</label><input id="seance" placeholder="Ex. : SA 1, séance 2"></div>
-<div class="field"><label for="date">Date</label><input id="date" type="date"></div>
-<div class="field"><label for="duree">Durée en minutes *</label><input id="duree" type="number" min="5" max="180" value="30" required></div>
-<div class="field"><label for="notion">Titre de la leçon *</label><input id="notion" required placeholder="Ex. : Les diphtongues"></div>
-</div>
+    <label for="classe">Classe</label>
+    <select id="classe">
+      <option value="CI">CI</option>
+      <option value="CP">CP</option>
+      <option value="CE1" selected>CE1</option>
+      <option value="CE2">CE2</option>
+      <option value="CM1">CM1</option>
+      <option value="CM2">CM2</option>
+    </select>
 
-<h3>2. Compétences et préparation</h3>
-<div class="field"><label for="competence">Compétence disciplinaire</label><textarea id="competence"></textarea></div>
-<div class="field"><label for="transversales">Compétences transversales / CTD</label><textarea id="transversales"></textarea></div>
-<div class="field"><label for="connaissances">Connaissances et techniques</label><textarea id="connaissances"></textarea></div>
-<div class="field"><label for="strategies">Stratégies d’enseignement, d’apprentissage et d’évaluation</label><textarea id="strategies" placeholder="Travail individuel, en groupe, collectif, observation..."></textarea></div>
-<div class="field"><label for="materiel">Matériel et supports</label><textarea id="materiel"></textarea></div>
-<div class="field"><label for="prerequis">Prérequis / acquis antérieurs</label><textarea id="prerequis"></textarea></div>
-<div class="field"><label for="objectif">Objectif spécifique / résultat d’apprentissage visé</label><textarea id="objectif" placeholder="À la fin de la séance, l’apprenant sera capable de..."></textarea></div>
+    <label for="discipline">Discipline</label>
+    <select id="discipline">
+      <option>Français</option>
+      <option>Mathématiques - Arithmétique</option>
+      <option>Mathématiques - Géométrie</option>
+      <option>Mathématiques - Mesures</option>
+      <option>ES - Morale</option>
+      <option>ES - Civisme</option>
+      <option>ES - Compétence 2 : Histoire et Géographie</option>
+      <option>ES - Compétence 3 : Langues et culture</option>
+      <option>EST</option>
+      <option>EA - Dessin</option>
+      <option>EA - Chant</option>
+      <option>EA - Travaux manuels</option>
+      <option>EA - Poésie</option>
+      <option>EA - Conte</option>
+      <option>EA - Couture</option>
+      <option>EPS</option>
+    </select>
 
-<h3>3. Déroulement pédagogique</h3>
-<div class="field"><label for="rappel">Rappel</label><textarea id="rappel"></textarea></div>
-<div class="field"><label for="mise">Mise en situation / situation de départ</label><textarea id="mise"></textarea></div>
-<div class="field"><label for="acquis">Émergence des acquis antérieurs</label><textarea id="acquis"></textarea></div>
-<div class="field"><label for="nouveau">Proposition de nouvelles acquisitions</label><textarea id="nouveau"></textarea></div>
-<div class="field"><label for="realisation">Réalisation / construction des nouveaux savoirs</label><textarea id="realisation"></textarea></div>
-<div class="field"><label for="synthese">Synthèse / trace écrite</label><textarea id="synthese"></textarea></div>
-<div class="field"><label for="application">Application / exercices</label><textarea id="application"></textarea></div>
-<div class="field"><label for="objectivation">Objectivation</label><textarea id="objectivation"></textarea></div>
-<div class="field"><label for="evaluation">Évaluation orale ou écrite</label><textarea id="evaluation"></textarea></div>
-<div class="field"><label for="projection">Projection / réinvestissement</label><textarea id="projection"></textarea></div>
-<div class="field"><label for="remediation">Remédiation prévue</label><textarea id="remediation"></textarea></div>
-<div class="field"><label for="notes">Notes personnelles / observations</label><textarea id="notes"></textarea></div>
+    <label for="documentType">Document à générer</label>
+    <select id="documentType">
+      <option value="lesdeux">Fiche de préparation et résumé</option>
+      <option value="fiche">Fiche de préparation seulement</option>
+      <option value="resume">Résumé de cours seulement</option>
+    </select>
 
-<div class="actions">
-<button type="submit">Générer le document</button>
-<button type="button" class="secondary" id="effacer">Effacer le formulaire</button>
-</div>
-</form>
-</section>
+    <label for="notion">Notion ou titre de la leçon</label>
+    <input id="notion" list="notions" placeholder="Ex. : Les diphtongues" required>
+    <datalist id="notions">
+      <option value="Les diphtongues et doubles consonnes">
+      <option value="Lecture d'un texte">
+      <option value="Compréhension d'un texte narratif">
+      <option value="Expression écrite">
+      <option value="Vocabulaire">
+      <option value="Le nom">
+      <option value="Le déterminant">
+      <option value="Le sujet et le verbe">
+      <option value="La conjugaison">
+      <option value="L'orthographe">
+      <option value="La phrase">
+      <option value="Les nombres">
+      <option value="Les opérations">
+      <option value="Les figures géométriques">
+      <option value="Les mesures">
+    </datalist>
 
-<section id="fiche" class="card">
-<div class="actions no-print">
-<button type="button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
-<button type="button" class="secondary" onclick="retour()">Modifier le formulaire</button>
-</div>
-<div id="sortie"></div>
-</section>
+    <label for="duree">Durée en minutes</label>
+    <input id="duree" type="number" min="5" value="45">
+
+    <label for="semaine">Semaine ou période</label>
+    <input id="semaine" placeholder="Ex. : Semaine 1">
+
+    <label for="objectif">Objectif d'apprentissage</label>
+    <textarea id="objectif" placeholder="Ce que l'élève devra savoir ou savoir faire."></textarea>
+
+    <label for="materiel">Matériel didactique</label>
+    <textarea id="materiel" placeholder="Objets réels, tableau, ardoises, manuel, images..."></textarea>
+
+    <label for="prerequis">Prérequis</label>
+    <textarea id="prerequis" placeholder="Connaissances nécessaires avant la leçon."></textarea>
+
+    <button onclick="generer()">Générer le document</button>
+    <button class="secondary" onclick="reinitialiser()">Effacer les champs</button>
+  </section>
+
+  <section class="panel" id="programme">
+    <h2>2. Programme des diphtongues et doubles consonnes — CE1</h2>
+    <p class="small">
+      Programme transcrit à partir des informations communiquées.
+      Certains éléments doivent encore être vérifiés sur le document original.
+    </p>
+
+    <label for="semaineLecture">Choisir une semaine</label>
+    <select id="semaineLecture" onchange="afficherProgramme()">
+      <option value="0">Semaine 1</option>
+      <option value="1">Semaine 2</option>
+      <option value="2">Semaine 3</option>
+      <option value="3">Semaine 4</option>
+    </select>
+    <div id="contenuProgramme"></div>
+    <button class="light" onclick="utiliserProgramme()">Utiliser comme notion de leçon</button>
+  </section>
+
+  <section class="panel" id="resultat">
+    <h2>3. Documents générés</h2>
+    <div class="actions">
+      <button onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+      <button class="secondary" onclick="copierDocument()">Copier le texte</button>
+    </div>
+    <div id="documents"></div>
+  </section>
 </main>
 
-<script>
-const $=id=>document.getElementById(id);
-const ids=["ecole","enseignant","classe","discipline","domaine","typeDoc","theme","sa","seance","date","duree","notion","competence","transversales","connaissances","strategies","materiel","prerequis","objectif","rappel","mise","acquis","nouveau","realisation","synthese","application","objectivation","evaluation","projection","remediation","notes"];
+<footer>
+  Bot pédagogique APC Bénin — outil de préparation pédagogique.
+  Vérifier les contenus avec les programmes, guides et manuels officiels.
+</footer>
 
-function v(id){return $(id).value.trim()}
-function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function val(id,def="À compléter"){return esc(v(id)||def)}
-function p(label,id,def="À compléter"){return `<p><strong>${label} :</strong> ${val(id,def)}</p>`}
-function suggestions(){
- const n=v("notion"),c=v("classe"),d=v("discipline");
- const sujet=`la notion « ${n} » en ${d}, classe ${c}`;
- return {
- rappel:`Faire rappeler une connaissance antérieure utile pour étudier ${n}.`,
- mise:`Présenter une situation concrète adaptée à ${sujet}, puis poser une question qui suscite la recherche.`,
- acquis:`Questionner les apprenants sur ce qu’ils savent déjà et recueillir leurs réponses.`,
- nouveau:`Annoncer la nouvelle acquisition : étudier ${n}. Faire exprimer aux apprenants ce qu’ils pensent découvrir.`,
- realisation:`Guider l’observation, la recherche, la manipulation ou l’analyse. Faire proposer, comparer et justifier les réponses liées à ${n}.`,
- synthese:`Faire formuler l’essentiel de la leçon. Compléter avec la définition, la règle ou la méthode exacte validée par l’enseignant.`,
- application:`Proposer des exercices progressifs sur ${n}, adaptés au niveau ${c}.`,
- objectivation:`Demander aux apprenants ce qu’ils ont appris, comment ils l’ont appris et les difficultés rencontrées.`,
- evaluation:`Proposer une tâche individuelle permettant de vérifier l’objectif d’apprentissage sur ${n}.`,
- projection:`Demander aux apprenants comment ils pourront réutiliser cet apprentissage dans une nouvelle situation.`,
- remediation:`Reprendre la notion avec des exemples plus simples et un accompagnement ciblé pour les apprenants en difficulté.`
- };
+<script>
+const programmeLecture = [
+  [
+    "AM, EM, AN, EN",
+    "ON, OM",
+    "OIN",
+    "IEN, ION",
+    "AU, EAU, ONT, OS",
+    "OI, VOIX, LIT",
+    "IN, IL, AIN, EIN",
+    "EU, ŒU"
+  ],
+  [
+    "OR, PAR",
+    "ET = É, EZ = É, AI = É",
+    "AY, OU, UY",
+    "AI, EI, AIS, AIT",
+    "AIL, AILLE",
+    "ILL, EUIL, FEUILLE",
+    "EIL, ELLE",
+    "OU, OUILLE"
+  ],
+  [
+    "ŒUR, EUR, EURE",
+    "OIR, LIRE",
+    "G = J",
+    "G = GU",
+    "GN",
+    "QU = K = C",
+    "C = S ; Ç = S",
+    "S = Z"
+  ],
+  [
+    "IEZ, IER, IED",
+    "CH, TCH",
+    "PH = F, TH = T",
+    "AC, OC, IC, EC",
+    "TION = SION",
+    "BL, PL, VL, GL, FL, CL…",
+    "BR, TR, CR, PR, DE, FR…",
+    "DJ, GB, KP"
+  ]
+];
+
+function echapper(texte) {
+  return String(texte).replace(/[&<>"']/g, function(c) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[c];
+  });
 }
-function row(t,d,c,r,e){
- return `<tr><td><strong>${t}</strong><br>${d} min</td><td>${esc(c)}</td><td>${esc(r)}</td><td>${esc(e)}</td></tr>`;
+
+function afficherProgramme() {
+  const semaine = Number(document.getElementById("semaineLecture").value);
+  const liste = programmeLecture[semaine];
+
+  let html = "<table><thead><tr><th>Jour de progression</th><th>Contenu transcrit</th></tr></thead><tbody>";
+  liste.forEach(function(item, index) {
+    html += "<tr><td>Étude " + (index + 1) + "</td><td>" + echapper(item) + "</td></tr>";
+  });
+  html += "</tbody></table>";
+  html += '<p class="small">Attention : vérifier les graphies et les exemples incertains avant de construire les exercices.</p>';
+
+  document.getElementById("contenuProgramme").innerHTML = html;
 }
-function durees(total){
- const parts=[10,10,10,5,35,10,10,10];
- let a=parts.map(x=>Math.floor(total*x/100));
- let reste=total-a.reduce((s,x)=>s+x,0);
- for(let i=0;i<reste;i++)a[i%a.length]++;
- return a;
+
+function utiliserProgramme() {
+  const semaine = Number(document.getElementById("semaineLecture").value);
+  document.getElementById("classe").value = "CE1";
+  document.getElementById("discipline").value = "Français";
+  document.getElementById("notion").value =
+    "Diphtongues et doubles consonnes — semaine " + (semaine + 1);
+  document.getElementById("semaine").value = "Semaine " + (semaine + 1);
+  document.getElementById("objectif").value =
+    "Amener les élèves à reconnaître, lire et utiliser les graphies étudiées dans des syllabes, des mots et des phrases.";
+  document.getElementById("materiel").value =
+    "Tableau, ardoises, cahiers, cartes de graphies, mots et texte de lecture adaptés.";
+  document.getElementById("formulaire").scrollIntoView({behavior:"smooth"});
 }
-function generer(e){
- e.preventDefault();
- const total=Math.max(5,Number(v("duree"))||30);
- const s=suggestions();
- const titre=v("typeDoc");
- let html=`<h2>${val("notion")} — ${val("discipline")}</h2>
- <div class="meta">
- ${p("École","ecole")}${p("Enseignant(e)","enseignant")}
- ${p("Classe","classe")}${p("Discipline","discipline")}
- ${p("Sous-discipline / domaine","domaine")}${p("Thème","theme")}
- ${p("Situation d’apprentissage","sa")}${p("Situation / séance n°","seance")}
- ${p("Date","date")}${p("Durée","duree")} min
- </div><hr>
- ${p("Compétence disciplinaire","competence")}
- ${p("Compétences transversales / CTD","transversales")}
- ${p("Connaissances et techniques","connaissances")}
- ${p("Stratégies d’enseignement, d’apprentissage et d’évaluation","strategies")}
- ${p("Matériel","materiel")}
- ${p("Prérequis","prerequis")}
- ${p("Objectif spécifique","objectif")}`;
- if(titre==="Résumé de cours"){
- html+=`<h3>Résumé de cours : ${val("notion")}</h3>
- ${p("Notion / leçon à retenir","synthese","À rédiger et vérifier selon le cours étudié.")}
- ${p("Exercices d’application","application")}
- ${p("Évaluation","evaluation")}
- ${p("Remédiation","remediation")}
- ${p("Réinvestissement","projection")}`;
- }else{
- const d=durees(total);
- html+=`<h3>Déroulement</h3>
- <table><thead><tr><th>Étapes / durée</th><th>CONSIGNES de l’enseignant</th><th>Activités des apprenants</th><th>RÉSULTATS ATTENDUS / observations</th></tr></thead><tbody>`;
- html+=row("Rappel",d[0],v("rappel")||s.rappel,"Réactivent leurs acquis antérieurs.","Les connaissances utiles sont rappelées.");
- html+=row("INTRODUCTION — Mise en situation",d[1],v("mise")||s.mise,"Écoutent, observent et réagissent.","La situation de départ est comprise.");
- html+=row("Émergence des acquis antérieurs",d[2],v("acquis")||s.acquis,"Expriment leurs connaissances et répondent aux questions.","Les acquis et les besoins sont identifiés.");
- html+=row("Proposition de nouvelles acquisitions",d[3],v("nouveau")||s.nouveau,"Identifient la nouvelle notion à étudier.","L’objectif de la séance est compris.");
- html+=row("RÉALISATION — Construction des savoirs",d[4],v("realisation")||s.realisation,"Recherchent, observent, manipulent, proposent et justifient leurs réponses.","Les notions visées sont construites progressivement.");
- html+=row("Synthèse / application",d[5],v("synthese")||s.synthese,"Formulent l’essentiel puis réalisent les exercices proposés : "+(v("application")||s.application),"La règle ou la méthode est formulée et mise en pratique.");
- html+=row("RETOUR ET PROJECTION — Objectivation",d[6],v("objectivation")||s.objectivation,"Expliquent ce qu’ils ont appris et les difficultés rencontrées.","Les apprentissages sont explicités.");
- html+=row("Évaluation / projection",d[7],(v("evaluation")||s.evaluation)+" Projection : "+(v("projection")||s.projection),"Réalisent la tâche d’évaluation et proposent un réinvestissement.","Le degré d’atteinte de l’objectif est observé.");
- html+=`</tbody></table>
- <h3>Trace écrite / synthèse</h3><p style="white-space:pre-wrap">${val("synthese","À compléter avec la trace écrite exacte du cours.")}</p>
- <h3>Remédiation</h3><p>${val("remediation",s.remediation)}</p>
- <h3>Notes personnelles</h3><div class="notes">${val("notes","Durée réelle : ____________________<br>Problèmes rencontrés : ____________________<br>Suggestions : ____________________")}</div>`;
- }
- html+=`<p class="small">Document généré automatiquement à partir des informations saisies. Vérifier l’exactitude des compétences, des contenus, des consignes, des résultats attendus et des durées selon les programmes et guides officiels applicables au Bénin.</p>`;
- $("sortie").innerHTML=html;
- $("formulaire").style.display="none";
- $("fiche").style.display="block";
- window.scrollTo(0,0);
+
+function generer() {
+  const classe = document.getElementById("classe").value;
+  const discipline = document.getElementById("discipline").value;
+  const type = document.getElementById("documentType").value;
+  const notion = document.getElementById("notion").value.trim();
+  const duree = Number(document.getElementById("duree").value) || 45;
+  const semaine = document.getElementById("semaine").value.trim() || "À préciser";
+  const objectif = document.getElementById("objectif").value.trim() ||
+    "À préciser par l'enseignant selon le programme et le guide pédagogique.";
+  const materiel = document.getElementById("materiel").value.trim() ||
+    "Tableau, ardoises, cahiers et matériel adapté à la leçon.";
+  const prerequis = document.getElementById("prerequis").value.trim() ||
+    "À déterminer selon les acquis des élèves.";
+
+  if (!notion) {
+    alert("Saisis d'abord la notion de la leçon.");
+    document.getElementById("notion").focus();
+    return;
+  }
+
+  let html = "";
+
+  if (type === "fiche" || type === "lesdeux") {
+    html += `
+      <article class="document">
+        <h2>FICHE DE PRÉPARATION</h2>
+        <p><strong>République du Bénin — Enseignement primaire</strong></p>
+        <table>
+          <tr><th>Classe</th><td>${echapper(classe)}</td>
+          <th>Discipline</th><td>${echapper(discipline)}</td></tr>
+          <tr><th>Notion</th><td colspan="3">${echapper(notion)}</td></tr>
+          <tr><th>Durée</th><td>${duree} minutes</td>
+          <th>Période</th><td>${echapper(semaine)}</td></tr>
+          <tr><th>Objectif</th><td colspan="3">${echapper(objectif)}</td></tr>
+          <tr><th>Prérequis</th><td colspan="3">${echapper(prerequis)}</td></tr>
+          <tr><th>Matériel</th><td colspan="3">${echapper(materiel)}</td></tr>
+        </table>
+
+        <h3>Déroulement pédagogique proposé</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th><th>Activités de l'enseignant</th>
+              <th>Activités des élèves</th><th>Résultats attendus / vérification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Mise en situation</td>
+              <td>Présente une situation concrète, un objet, une question ou un support en lien avec la notion.</td>
+              <td>Observent, écoutent, répondent et expriment leurs idées.</td>
+              <td>Les élèves identifient le problème ou la tâche à réaliser.</td>
+            </tr>
+            <tr>
+              <td>2. Recherche / exploration</td>
+              <td>Donne une consigne claire, organise les recherches et apporte une aide adaptée sans faire le travail à la place des élèves.</td>
+              <td>Recherchent individuellement ou en groupe, manipulent, lisent ou proposent des réponses.</td>
+              <td>Les élèves produisent des propositions en rapport avec la notion.</td>
+            </tr>
+            <tr>
+              <td>3. Mise en commun</td>
+              <td>Invite les élèves à présenter leurs résultats et fait comparer les démarches.</td>
+              <td>Présentent, expliquent, écoutent et confrontent leurs réponses.</td>
+              <td>Les propositions sont expliquées et discutées.</td>
+            </tr>
+            <tr>
+              <td>4. Structuration</td>
+              <td>Guide la correction, fait ressortir les éléments essentiels et formule la règle ou la synthèse avec la classe.</td>
+              <td>Corrigent, reformulent et notent la synthèse dans le cahier si nécessaire.</td>
+              <td>Les élèves formulent ou retiennent l'essentiel de la leçon.</td>
+            </tr>
+            <tr>
+              <td>5. Application</td>
+              <td>Propose des exercices progressifs et accompagne les élèves qui en ont besoin.</td>
+              <td>Résolvent les exercices et expliquent leurs réponses.</td>
+              <td>Les élèves appliquent la notion à des tâches nouvelles.</td>
+            </tr>
+            <tr>
+              <td>6. Évaluation</td>
+              <td>Donne une consigne individuelle permettant de vérifier l'objectif.</td>
+              <td>Réalisent le travail demandé individuellement.</td>
+              <td>Les réponses permettent de repérer les acquis et les difficultés.</td>
+            </tr>
+            <tr>
+              <td>7. Remédiation / prolongement</td>
+              <td>Prévoit un exercice de reprise pour les difficultés observées et une activité supplémentaire pour les élèves prêts.</td>
+              <td>Reprennent les éléments non maîtrisés ou réalisent une activité complémentaire.</td>
+              <td>Les difficultés sont ciblées et les apprentissages consolidés.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Consigne principale :</strong> À adapter précisément à la notion et au niveau des élèves.</p>
+        <p><strong>Critère d'évaluation :</strong> L'élève réalise correctement la tâche correspondant à l'objectif annoncé.</p>
+        <p class="small">Modèle de travail à adapter au canevas officiel de l'école et au guide pédagogique applicable.</p>
+      </article>`;
+  }
+
+  if (type === "resume" || type === "lesdeux") {
+    html += `
+      <article class="document">
+        <h2>RÉSUMÉ DE COURS</h2>
+        <p><strong>Classe :</strong> ${echapper(classe)}</p>
+        <p><strong>Discipline :</strong> ${echapper(discipline)}</p>
+        <p><strong>Leçon :</strong> ${echapper(notion)}</p>
+        <h3>Ce qu'il faut retenir</h3>
+        <p>${echapper(objectif)}</p>
+        <p><strong>Notion étudiée :</strong> ${echapper(notion)}.</p>
+        <p>
+          Le contenu précis de la leçon doit être complété à partir du programme,
+          du guide pédagogique et du manuel correspondant à la classe.
+          Ce résumé automatique est une trame de rédaction et non un cours officiel complet.
+        </p>
+        <h3>Exemples</h3>
+        <p>Ajouter ici des exemples simples, adaptés au niveau des élèves et vérifiés par l'enseignant.</p>
+        <h3>Application</h3>
+        <p>1. Explique la notion étudiée avec tes propres mots.</p>
+        <p>2. Donne deux exemples correspondant à la leçon.</p>
+        <p>3. Réalise un exercice proposé par l'enseignant.</p>
+      </article>`;
+  }
+
+  document.getElementById("documents").innerHTML = html;
+  document.getElementById("resultat").style.display = "block";
+  document.getElementById("resultat").scrollIntoView({behavior:"smooth"});
 }
-function retour(){
- $("fiche").style.display="none";
- $("formulaire").style.display="block";
- window.scrollTo(0,0);
+
+function copierDocument() {
+  const texte = document.getElementById("documents").innerText;
+  if (!texte.trim()) {
+    alert("Génère d'abord un document.");
+    return;
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(texte)
+      .then(() => alert("Texte copié."))
+      .catch(() => copierAncienMode(texte));
+  } else {
+    copierAncienMode(texte);
+  }
 }
-$("form").addEventListener("submit",generer);
-$("effacer").addEventListener("click",()=>{
- if(confirm("Effacer toutes les informations saisies ?"))$("form").reset();
-});
+
+function copierAncienMode(texte) {
+  const zone = document.createElement("textarea");
+  zone.value = texte;
+  document.body.appendChild(zone);
+  zone.select();
+  try {
+    document.execCommand("copy");
+    alert("Texte copié si ton navigateur a autorisé la copie.");
+  } catch (e) {
+    alert("Copie automatique impossible. Sélectionne le texte du document.");
+  }
+  zone.remove();
+}
+
+function reinitialiser() {
+  document.getElementById("notion").value = "";
+  document.getElementById("semaine").value = "";
+  document.getElementById("objectif").value = "";
+  document.getElementById("materiel").value = "";
+  document.getElementById("prerequis").value = "";
+  document.getElementById("resultat").style.display = "none";
+  document.getElementById("documents").innerHTML = "";
+}
+
+afficherProgramme();
 </script>
 </body>
 </html>
