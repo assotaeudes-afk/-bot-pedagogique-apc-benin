@@ -1,5 +1,4 @@
-HTML
-
+index.html
 <script>
 const $ = id => document.getElementById(id);
 const valeur = id => $(id).value.trim();
