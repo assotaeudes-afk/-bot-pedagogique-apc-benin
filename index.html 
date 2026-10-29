@@ -173,24 +173,85 @@ const catalogue = {
 "Éducation artistique — Couture":["Découverte des matériaux et gestes simples"],
 "EPS":["Marcher, courir et s’arrêter","Équilibre et déplacements simples"]
 },
+
 "CP":{
-"Français":["Compréhension de consignes simples","Lecture et écriture de syllabes","Copie de mots et de courtes phrases","Vocabulaire du milieu de vie"],
-"Mathématiques — Arithmétique":["Nombres de 0 à 99 : comptage, lecture et écriture","Comparer et ranger les nombres de 0 à 99","Addition et soustraction","Le nombre 100 : composition, représentation, identification, lecture et écriture","Résolution de problèmes simples"],
-"Mathématiques — Géométrie":["Reconnaître et décrire le cube","Repérage et formes géométriques simples"],
-"Mathématiques — Mesures":["Comparer des longueurs","Mesurer avec des unités usuelles de la classe"],
-"Éducation sociale — Morale":["Respect, entraide et politesse"],
-"Éducation sociale — Civisme":["Règles de vie en classe et à l’école"],
-"Éducation sociale — Histoire-Géographie":["La famille et l’école","Se repérer dans le milieu proche"],
-"Éducation sociale — Langues et culture":["Expressions et pratiques culturelles du milieu"],
-"EST":["Hygiène et santé","Aliments sains et protection des aliments","Utilisation prudente du foyer et du réchaud","Les différents types de marmites"],
-"Éducation artistique — Dessin":["Dessiner des objets familiers"],
-"Éducation artistique — Chant":["Chants du répertoire enfantin"],
-"Éducation artistique — Travaux manuels":["Découpage, pliage et assemblage"],
-"Éducation artistique — Poésie":["Récitation d’un poème court"],
-"Éducation artistique — Conte":["Écoute et restitution d’un conte"],
-"Éducation artistique — Couture":["Initiation aux gestes simples et à la sécurité"],
-"EPS":["Actions locomotrices et non locomotrices","Exécution d’actions avec l’ensemble du corps","Saut vers l’avant","Saut vers l’arrière","Saut vers le haut et vers le bas","Saut sur le côté"]
+"Français":[
+"Lecture et compréhension de consignes",
+"Lecture et écriture de syllabes et de mots",
+"Copie de mots et de phrases",
+"Vocabulaire du milieu de vie"
+],
+"Mathématiques — Arithmétique":[
+"Les nombres de 0 à 99 : comptage et décomptage",
+"Les nombres de 0 à 99 : lecture et écriture en chiffres et en lettres",
+"Les nombres de 0 à 99 : comparaison et rangement",
+"Addition et soustraction des nombres de 0 à 99",
+"Résolution de problèmes sur les nombres de 0 à 99",
+"Le nombre 100 : composition et représentation",
+"Le nombre 100 : identification, lecture et écriture en chiffres et en lettres",
+"Intégration des acquis : numération, addition et soustraction",
+"Intégration des acquis : résolution de problèmes"
+],
+"Mathématiques — Géométrie":[
+"Les solides géométriques : identification et description du cube",
+"Le cube : faces, sommets et arêtes",
+"Résolution de problèmes portant sur les solides géométriques"
+],
+"Mathématiques — Mesures":[
+"Comparaison de longueurs",
+"Mesures à partir d’objets du milieu de vie"
+],
+"Éducation sociale — Morale":[
+"Respect et entraide",
+"Politesse et règles de vie"
+],
+"Éducation sociale — Civisme":[
+"Respect du matériel collectif",
+"Règles de vie à l’école"
+],
+"Éducation sociale — Histoire-Géographie":[
+"La famille et l’école",
+"Le milieu de vie proche"
+],
+"Éducation sociale — Langues et culture":[
+"Expressions et pratiques culturelles du milieu"
+],
+"EST":[
+"Hygiène et santé",
+"Alimentation et protection des aliments",
+"Les différents types de marmites",
+"Utilisation prudente du foyer et du réchaud"
+],
+"Éducation artistique — Dessin":[
+"Dessin d’objets familiers"
+],
+"Éducation artistique — Chant":[
+"Chants et comptines"
+],
+"Éducation artistique — Travaux manuels":[
+"Découpage, pliage et assemblage"
+],
+"Éducation artistique — Poésie":[
+"Récitation d’un poème court"
+],
+"Éducation artistique — Conte":[
+"Écoute et restitution d’un conte"
+],
+"Éducation artistique — Couture":[
+"Découverte des gestes et matériaux de base"
+],
+"EPS":[
+"Actions locomotrices et non locomotrices",
+"Saut vers l’avant",
+"Saut vers l’arrière",
+"Saut vers le haut",
+"Saut vers le bas",
+"Saut sur le côté",
+"Préparation, réalisation et amélioration d’une action motrice",
+"Retour au calme et rangement du matériel"
+]
 },
+
 "CE1":{
 "Français":["Les diphtongues (notion à préciser selon le support utilisé)","Vocabulaire fonctionnel : mots et expressions relatifs à l’homme et à sa santé","Reformuler des mots et expressions pour améliorer un portrait","Emploi de « ce » et « cette »","Lecture et compréhension d’un texte","Production écrite : améliorer une production"],
 "Mathématiques — Arithmétique":["Numération et comparaison des nombres","Addition et soustraction","Multiplication : premières situations","Résolution de problèmes"],
