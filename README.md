@@ -4,436 +4,470 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#185d39">
 <title>Bot pédagogique APC Bénin</title>
 <style>
-:root{--vert:#185d39;--vert2:#28784c;--clair:#eef7f0;--or:#e5b84b;--texte:#202820;--gris:#657067;--bord:#d7e1d9;--fond:#f5f8f5}
+:root{--vert:#185d39;--clair:#edf5ef;--or:#d5a53b}
 *{box-sizing:border-box}
-body{margin:0;background:var(--fond);color:var(--texte);font-family:Arial,Helvetica,sans-serif;line-height:1.45}
-header{background:linear-gradient(120deg,var(--vert),var(--vert2));color:#fff;padding:24px 16px;text-align:center}
-header h1{margin:0 0 5px;font-size:clamp(1.5rem,4vw,2.2rem)}
-header p{margin:0}
-main{max-width:1100px;margin:20px auto;padding:0 12px 35px}
-.panel{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 3px 12px #183c2410}
-h2{font-size:1.2rem;color:var(--vert);margin:0 0 14px}
-h3{color:var(--vert);margin:18px 0 8px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.field{display:flex;flex-direction:column;gap:5px}
-.field.full{grid-column:1/-1}
-label{font-weight:700;font-size:.92rem}
-input,select,textarea{font:inherit;width:100%;padding:10px;border:1px solid #bdcabe;border-radius:8px;background:#fff;color:var(--texte)}
-textarea{min-height:78px;resize:vertical}
-.buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
-button{border:0;border-radius:9px;padding:11px 15px;font:inherit;font-weight:700;cursor:pointer}
-.primary{background:var(--vert);color:white}
-.secondary{background:#e8f1ea;color:var(--vert)}
-.danger{background:#fff0ee;color:#8a2d22}
-.small{font-size:.86rem;color:var(--gris)}
-.notice{padding:11px 13px;background:#fff8e5;border-left:4px solid var(--or);border-radius:6px;font-size:.9rem}
-#fiche{background:white;border:1px solid var(--bord);border-radius:12px;padding:22px;min-height:120px}
-.empty{color:var(--gris);text-align:center;padding:30px 8px}
-.fiche-head{text-align:center;border-bottom:2px solid var(--vert);padding-bottom:12px;margin-bottom:14px}
-.fiche-head h2{margin:0;font-size:1.4rem;text-transform:uppercase}
-.fiche-head h3{margin:6px 0;color:var(--texte);font-size:1.1rem}
-.fiche-head p{margin:3px}
-.meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 14px;margin:12px 0}
-.meta div{border-bottom:1px dotted #aab8ad;padding:4px 0}
-.fiche-section{margin-top:16px;break-inside:avoid}
-.fiche-section h3{font-size:1rem;background:var(--clair);padding:7px 9px;border-left:4px solid var(--vert);margin:0 0 8px}
-.fiche-section p{margin:6px 0;white-space:pre-wrap}
-table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
-th,td{border:1px solid #9eafa2;padding:8px;text-align:left;vertical-align:top;white-space:pre-wrap}
-th{background:#edf5ef;color:#163d27}
-footer{text-align:center;color:var(--gris);padding:12px;font-size:.85rem}
-@media(max-width:650px){.grid,.meta{grid-template-columns:1fr}.panel{padding:13px}#fiche{padding:13px}table{font-size:.78rem}th,td{padding:5px}}
-@page{size:A4;margin:13mm}
+body{margin:0;background:#f2f5f2;color:#202820;font-family:Arial,sans-serif;line-height:1.5}
+header{background:var(--vert);color:white;padding:24px 15px;text-align:center}
+header h1{margin:0;font-size:26px}
+header p{margin:7px 0 0}
+main{max-width:1050px;margin:22px auto;padding:0 12px}
+.panel{background:white;border-radius:12px;padding:20px;margin-bottom:18px;box-shadow:0 2px 9px #0001}
+h2{color:var(--vert);margin-top:0}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+label{display:block;font-weight:bold;margin-bottom:5px}
+input,select,textarea{width:100%;padding:10px;border:1px solid #bac7bc;border-radius:6px;font:inherit;background:white}
+textarea{min-height:85px;resize:vertical}
+.full{grid-column:1/-1}
+.buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+button{border:0;border-radius:7px;padding:11px 16px;background:var(--vert);color:white;font-weight:bold;cursor:pointer}
+button.secondary{background:#526257}
+button.gold{background:#9a6c08}
+#message{margin-top:10px;font-weight:bold}
+#fiche{background:white;padding:22px;border:1px solid #d5ddd6;border-radius:8px;overflow-wrap:anywhere}
+#fiche h2,#fiche h3{text-align:center;color:var(--vert)}
+#fiche h3{border-bottom:1px solid #b6c8ba;padding-bottom:5px}
+.fiche-entete{text-align:center;border:2px solid var(--vert);padding:12px;margin-bottom:15px}
+table{border-collapse:collapse;width:100%;margin:12px 0}
+th,td{border:1px solid #89988d;padding:8px;text-align:left;vertical-align:top}
+th{background:var(--clair)}
+.note{font-size:13px;color:#59645b}
+footer{text-align:center;padding:20px;color:#59645b}
 @media print{
-body{background:#fff;font-size:10pt}
-header,.formulaire,.actions,footer,.notice,.no-print{display:none!important}
-main{max-width:none;margin:0;padding:0}
-.panel{border:0;box-shadow:none;padding:0;margin:0}
-#fiche{border:0;border-radius:0;padding:0;min-height:0}
-.fiche-head h2{font-size:16pt}
-.fiche-head h3{font-size:12pt}
-table{font-size:8.5pt;page-break-inside:auto}
-tr{page-break-inside:avoid}
-th,td{padding:5px}
-.fiche-section{break-inside:avoid}
+ body{background:white}
+ header,.formulaire,.actions,footer{display:none!important}
+ main{max-width:none;margin:0;padding:0}
+ .panel{box-shadow:none;border:0;padding:0;margin:0}
+ #fiche{border:0;padding:0}
+ @page{size:A4;margin:15mm}
 }
 </style>
 </head>
 <body>
 <header>
 <h1>Bot pédagogique APC Bénin</h1>
-<p>Préparation des fiches pédagogiques du primaire — CI à CM2</p>
+<p>Préparation des fiches pédagogiques du primaire</p>
 </header>
+
 <main>
 <section class="panel formulaire">
-<h2>1. Informations de la fiche</h2>
-<div class="grid">
-<div class="field"><label for="classe">Classe *</label><select id="classe"><option>CI</option><option>CP</option><option>CE1</option><option>CE2</option><option>CM1</option><option>CM2</option></select></div>
-<div class="field"><label for="discipline">Discipline *</label><select id="discipline"></select></div>
-<div class="field"><label for="notionCatalogue">Notion du catalogue</label><select id="notionCatalogue"><option value="">— Choisir une notion —</option></select></div>
-<div class="field"><label for="titre">Titre de la leçon *</label><input id="titre" placeholder="Ex. Les nombres de 0 à 99"></div>
-<div class="field"><label for="domaine">Domaine / sous-domaine</label><input id="domaine" placeholder="Ex. Arithmétique, vocabulaire..."></div>
-<div class="field"><label for="duree">Durée</label><input id="duree" value="45 min"></div>
-<div class="field"><label for="unite">Unité / période</label><input id="unite" placeholder="Unité, trimestre ou période"></div>
-<div class="field"><label for="sa">Situation d’apprentissage (SA)</label><input id="sa" placeholder="Numéro ou intitulé"></div>
-<div class="field"><label for="sequence">Séquence / séance</label><input id="sequence" placeholder="Ex. Séquence 1, séance 2"></div>
-<div class="field"><label for="numero">Numéro de fiche</label><input id="numero" placeholder="Facultatif"></div>
-<div class="field"><label for="date">Date de déroulement</label><input id="date" type="date"></div>
-<div class="field"><label for="ecole">École</label><input id="ecole" placeholder="Nom de l’école"></div>
-<div class="field"><label for="enseignant">Enseignant(e)</label><input id="enseignant" placeholder="Nom de l’enseignant(e)"></div>
-<div class="field"><label for="effectif">Effectif de la classe</label><input id="effectif" type="number" min="0" placeholder="Nombre d’élèves"></div>
-<div class="field full"><label for="competence">Compétence disciplinaire</label><textarea id="competence" placeholder="Compétence visée"></textarea></div>
-<div class="field full"><label for="competencesTrans">Compétences transversales / transdisciplinaires</label><textarea id="competencesTrans" placeholder="À préciser selon le guide officiel utilisé"></textarea></div>
-<div class="field full"><label for="connaissances">Connaissances et techniques</label><textarea id="connaissances" placeholder="Savoirs et savoir-faire visés"></textarea></div>
-<div class="field full"><label for="strategies">Stratégies d’enseignement, d’apprentissage et d’évaluation</label><textarea id="strategies" placeholder="Travail individuel, en groupe, collectif, manipulation..."></textarea></div>
-<div class="field full"><label for="materiel">Matériel pédagogique</label><textarea id="materiel" placeholder="Manuels, ardoises, images, objets, matériel sportif..."></textarea></div>
-</div>
-</section>
+<h2>Préparer une leçon</h2>
+<p class="note">Remplis les champs puis clique sur « Générer la fiche ». Le catalogue est une base de travail à compléter et à vérifier avec les programmes et guides officiels.</p>
 
-<section class="panel formulaire">
-<h2>2. Préparation pédagogique</h2>
-<div class="grid">
-<div class="field full"><label for="prerequis">Prérequis</label><textarea id="prerequis" placeholder="Ce que les élèves doivent déjà savoir ou savoir-faire"></textarea></div>
-<div class="field full"><label for="objectif">Objectif(s) d’apprentissage</label><textarea id="objectif" placeholder="À la fin de la séance, l’élève sera capable de..."></textarea></div>
-<div class="field full"><label for="situation">Mise en situation / situation-problème</label><textarea id="situation" placeholder="Situation de départ liée à la vie des élèves"></textarea></div>
-<div class="field full"><label for="trace">Trace écrite / synthèse attendue</label><textarea id="trace" placeholder="Règle, définition, méthode ou résumé à retenir"></textarea></div>
-<div class="field full"><label for="remediation">Remédiation / différenciation</label><textarea id="remediation" placeholder="Aides prévues pour les élèves en difficulté et approfondissement"></textarea></div>
-<div class="field full"><label for="projection">Projection / réinvestissement</label><textarea id="projection" placeholder="Comment les élèves réutiliseront-ils les acquis ?"></textarea></div>
+<div class="formgrid">
+<div>
+<label for="classe">Classe</label>
+<select id="classe">
+<option>CI</option><option>CP</option><option>CE1</option>
+<option>CE2</option><option>CM1</option><option>CM2</option>
+</select>
 </div>
-</section>
+<div>
+<label for="discipline">Discipline</label>
+<select id="discipline">
+<option>Français</option>
+<option>Mathématiques — Arithmétique</option>
+<option>Mathématiques — Géométrie</option>
+<option>Mathématiques — Mesures</option>
+<option>Éducation sociale — Morale</option>
+<option>Éducation sociale — Civisme</option>
+<option>Éducation sociale — Histoire-Géographie</option>
+<option>Éducation sociale — Langues et culture</option>
+<option>EST</option>
+<option>Éducation artistique — Dessin</option>
+<option>Éducation artistique — Chant</option>
+<option>Éducation artistique — Travaux manuels</option>
+<option>Éducation artistique — Poésie</option>
+<option>Éducation artistique — Conte</option>
+<option>Éducation artistique — Couture</option>
+<option>EPS</option>
+</select>
+</div>
+<div class="full">
+<label for="notionCatalogue">Notion du catalogue</label>
+<select id="notionCatalogue"></select>
+</div>
+<div class="full">
+<label for="titre">Titre de la leçon</label>
+<input id="titre" placeholder="Titre de la leçon">
+</div>
+<div>
+<label for="ecole">École</label><input id="ecole">
+</div>
+<div>
+<label for="enseignant">Enseignant(e)</label><input id="enseignant">
+</div>
+<div>
+<label for="date">Date</label><input id="date" type="date">
+</div>
+<div>
+<label for="duree">Durée (minutes)</label><input id="duree" type="number" value="30" min="1">
+</div>
+<div>
+<label for="sa">Situation d’apprentissage (SA)</label><input id="sa" placeholder="Ex. : SA 1">
+</div>
+<div>
+<label for="sequence">Séquence</label><input id="sequence" placeholder="Ex. : Séquence 1">
+</div>
+<div>
+<label for="numero">Numéro de fiche</label><input id="numero" placeholder="Ex. : Fiche 1">
+</div>
+<div>
+<label for="periode">Période / trimestre</label><input id="periode">
+</div>
+<div class="full">
+<label for="competence">Compétence disciplinaire visée</label>
+<textarea id="competence" placeholder="À renseigner selon le programme officiel"></textarea>
+</div>
+<div class="full">
+<label for="competencesTrans">Compétences transversales et transdisciplinaires</label>
+<textarea id="competencesTrans"></textarea>
+</div>
+<div class="full">
+<label for="connaissances">Connaissances et techniques</label>
+<textarea id="connaissances"></textarea>
+</div>
+<div class="full">
+<label for="objectif">Objectif d’apprentissage / résultat final attendu</label>
+<textarea id="objectif"></textarea>
+</div>
+<div class="full">
+<label for="prerequis">Prérequis</label>
+<textarea id="prerequis"></textarea>
+</div>
+<div class="full">
+<label for="situation">Situation de départ / situation-problème</label>
+<textarea id="situation"></textarea>
+</div>
+<div class="full">
+<label for="strategies">Stratégies d’enseignement et d’apprentissage</label>
+<textarea id="strategies" placeholder="Travail individuel, en groupe, collectif, par paire…"></textarea>
+</div>
+<div class="full">
+<label for="materiel">Matériel didactique</label>
+<textarea id="materiel"></textarea>
+</div>
+<div class="full">
+<label for="trace">Trace écrite / synthèse à retenir</label>
+<textarea id="trace"></textarea>
+</div>
+<div class="full">
+<label for="remediation">Remédiation prévue</label>
+<textarea id="remediation"></textarea>
+</div>
+<div class="full">
+<label for="projection">Projection / réinvestissement</label>
+<textarea id="projection"></textarea>
+</div>
+</div>
 
-<section class="panel formulaire">
-<h2>3. Déroulement de la séance</h2>
-<p class="small">Les phases proposées sont un modèle adaptable. Modifie les consignes, stratégies et résultats attendus selon ta fiche et ta discipline.</p>
-<div class="grid">
-<div class="field"><label for="phase1">Activités préparatoires / rappel</label><textarea id="phase1">L’enseignant vérifie les prérequis et rappelle les acquis utiles.</textarea></div>
-<div class="field"><label for="attendu1">Résultats attendus</label><textarea id="attendu1">Les élèves mobilisent les acquis nécessaires.</textarea></div>
-<div class="field"><label for="phase2">Introduction / mise en situation</label><textarea id="phase2">L’enseignant présente la situation-problème et fait émerger les représentations.</textarea></div>
-<div class="field"><label for="attendu2">Résultats attendus</label><textarea id="attendu2">Les élèves observent, s’expriment et formulent des questions ou hypothèses.</textarea></div>
-<div class="field"><label for="phase3">Réalisation / construction des savoirs</label><textarea id="phase3">Les élèves recherchent, observent, manipulent, échangent et confrontent leurs réponses. L’enseignant guide et valide les acquis.</textarea></div>
-<div class="field"><label for="attendu3">Résultats attendus</label><textarea id="attendu3">Les élèves construisent la notion et justifient leurs réponses.</textarea></div>
-<div class="field"><label for="phase4">Application / entraînement</label><textarea id="phase4">Les élèves réalisent des exercices ou une tâche adaptée à la notion.</textarea></div>
-<div class="field"><label for="attendu4">Résultats attendus</label><textarea id="attendu4">Les élèves appliquent correctement la notion étudiée.</textarea></div>
-<div class="field"><label for="phase5">Retour / objectivation</label><textarea id="phase5">L’enseignant invite les élèves à dire ce qu’ils ont appris et les difficultés rencontrées.</textarea></div>
-<div class="field"><label for="attendu5">Résultats attendus</label><textarea id="attendu5">Les élèves expliquent l’essentiel de l’apprentissage réalisé.</textarea></div>
-<div class="field"><label for="phase6">Évaluation</label><textarea id="phase6">Proposer une tâche courte permettant de vérifier l’atteinte de l’objectif.</textarea></div>
-<div class="field"><label for="attendu6">Résultats attendus</label><textarea id="attendu6">Les élèves réalisent correctement la tâche d’évaluation.</textarea></div>
-<div class="field full"><label for="consigne">Consigne / exercice d’évaluation</label><textarea id="consigne" placeholder="Écris ici une consigne concrète et observable"></textarea></div>
+<h2 style="margin-top:25px">Déroulement détaillé</h2>
+<p class="note">Les durées des phases sont indicatives. Adapte-les à la durée totale de la séance.</p>
+<div id="phases" class="formgrid"></div>
+
+<div class="buttons actions">
+<button id="generer" type="button">Générer la fiche</button>
+<button id="copier" class="secondary" type="button">Copier le texte</button>
+<button id="imprimer" class="gold" type="button">Imprimer / PDF</button>
+<button id="vider" class="secondary" type="button">Vider le formulaire</button>
 </div>
-<div class="buttons">
-<button class="primary" type="button" id="generer">Générer la fiche complète</button>
-<button class="secondary" type="button" id="vider">Effacer les champs de préparation</button>
-</div>
+<div id="message" role="status"></div>
 </section>
 
 <section class="panel">
-<h2>4. Fiche générée</h2>
-<div class="notice no-print">Vérifie et complète la fiche avant de l’imprimer. Les champs officiels qui ne figurent pas dans tes documents de référence doivent être confirmés à partir du guide APC applicable.</div>
-<div id="fiche"><div class="empty">Remplis les informations, puis appuie sur « Générer la fiche complète ».</div></div>
-<div class="buttons actions">
-<button class="primary" type="button" id="imprimer">Imprimer / Enregistrer en PDF</button>
-<button class="secondary" type="button" id="copier">Copier le texte de la fiche</button>
+<div id="fiche">
+<h2>FICHE PÉDAGOGIQUE APC BÉNIN</h2>
+<p>Remplis le formulaire puis clique sur « Générer la fiche ».</p>
 </div>
-<p id="message" class="small actions" aria-live="polite"></p>
 </section>
 </main>
-<footer>Bot pédagogique APC Bénin — outil de préparation à vérifier et adapter aux guides officiels en vigueur.</footer>
-<!-- COLLE LA PARTIE 2 ICI, À LA PLACE DE CETTE LIGNE -->
-</body>
-</html>
+
+<footer>Bot pédagogique APC Bénin — outil d’aide à la préparation pédagogique.</footer>
 
 <script>
-const disciplines = [
-"Français","Mathématiques — Arithmétique","Mathématiques — Géométrie","Mathématiques — Mesures",
-"Éducation sociale — Morale","Éducation sociale — Civisme","Éducation sociale — Histoire-Géographie",
-"Éducation sociale — Langues et culture","EST","Éducation artistique — Dessin","Éducation artistique — Chant",
-"Éducation artistique — Travaux manuels","Éducation artistique — Poésie","Éducation artistique — Conte",
-"Éducation artistique — Couture","EPS"
-];
+"use strict";
 
 const catalogue = {
-"CI":{
-"Français":["Langage oral : se présenter","Écoute et compréhension de consignes","Vocabulaire de la classe","Préparation au geste graphique"],
-"Mathématiques — Arithmétique":["Tri et classement d’objets","Dénombrement de petites collections","Comparaison de quantités"],
-"Mathématiques — Géométrie":["Reconnaissance de formes simples","Repérage dans l’espace"],
-"Mathématiques — Mesures":["Comparaison de longueurs","Repérage des moments de la journée"],
-"Éducation sociale — Morale":["Politesse et respect des autres"],
-"Éducation sociale — Civisme":["Respect du matériel collectif"],
-"Éducation sociale — Histoire-Géographie":["La famille et le milieu proche"],
-"Éducation sociale — Langues et culture":["Comptines et expressions du milieu"],
-"EST":["Hygiène corporelle","Reconnaissance des objets usuels"],
-"Éducation artistique — Dessin":["Traces et traits libres"],
-"Éducation artistique — Chant":["Chants et comptines enfantines"],
-"Éducation artistique — Travaux manuels":["Modelage et assemblage simples"],
-"Éducation artistique — Poésie":["Récitation de comptines"],
-"Éducation artistique — Conte":["Écoute et compréhension d’un conte"],
-"Éducation artistique — Couture":["Découverte des matériaux et gestes simples"],
-"EPS":["Marcher, courir et s’arrêter","Équilibre et déplacements simples"]
+"CI": {
+"Français":["Écoute et compréhension de consignes","Expression orale en situation","Découverte de sons et de mots"],
+"Mathématiques — Arithmétique":["Dénombrement d’objets","Comparaison de collections","Premières situations d’addition"],
+"Mathématiques — Géométrie":["Repérage dans l’espace","Reconnaissance de formes simples"],
+"Mathématiques — Mesures":["Comparaison de grandeurs","Repérage du temps"],
+"Éducation sociale — Morale":["Politesse et respect","Partage et entraide"],
+"Éducation sociale — Civisme":["Règles de vie en classe","Respect du matériel"],
+"Éducation sociale — Histoire-Géographie":["La famille et l’école","Le milieu de vie proche"],
+"Éducation sociale — Langues et culture":["Expressions du milieu de vie"],
+"EST":["Hygiène corporelle","Propreté du cadre de vie"],
+"Éducation artistique — Dessin":["Tracés et dessin libre"],
+"Éducation artistique — Chant":["Chants et comptines"],
+"Éducation artistique — Travaux manuels":["Manipulation et assemblage"],
+"Éducation artistique — Poésie":["Mémorisation de comptines"],
+"Éducation artistique — Conte":["Écoute d’un conte"],
+"Éducation artistique — Couture":["Découverte de matériaux"],
+"EPS":["Marcher et courir","Sauter et se déplacer"]
 },
-
-"CP":{
-"Français":[
-"Lecture et compréhension de consignes",
-"Lecture et écriture de syllabes et de mots",
-"Copie de mots et de phrases",
-"Vocabulaire du milieu de vie"
-],
-"Mathématiques — Arithmétique":[
-"Les nombres de 0 à 99 : comptage et décomptage",
-"Les nombres de 0 à 99 : lecture et écriture en chiffres et en lettres",
-"Les nombres de 0 à 99 : comparaison et rangement",
-"Addition et soustraction des nombres de 0 à 99",
-"Résolution de problèmes sur les nombres de 0 à 99",
-"Le nombre 100 : composition et représentation",
-"Le nombre 100 : identification, lecture et écriture en chiffres et en lettres",
-"Intégration des acquis : numération, addition et soustraction",
-"Intégration des acquis : résolution de problèmes"
-],
-"Mathématiques — Géométrie":[
-"Les solides géométriques : identification et description du cube",
-"Le cube : faces, sommets et arêtes",
-"Résolution de problèmes portant sur les solides géométriques"
-],
-"Mathématiques — Mesures":[
-"Comparaison de longueurs",
-"Mesures à partir d’objets du milieu de vie"
-],
-"Éducation sociale — Morale":[
-"Respect et entraide",
-"Politesse et règles de vie"
-],
-"Éducation sociale — Civisme":[
-"Respect du matériel collectif",
-"Règles de vie à l’école"
-],
-"Éducation sociale — Histoire-Géographie":[
-"La famille et l’école",
-"Le milieu de vie proche"
-],
-"Éducation sociale — Langues et culture":[
-"Expressions et pratiques culturelles du milieu"
-],
-"EST":[
-"Hygiène et santé",
-"Alimentation et protection des aliments",
-"Les différents types de marmites",
-"Utilisation prudente du foyer et du réchaud"
-],
-"Éducation artistique — Dessin":[
-"Dessin d’objets familiers"
-],
-"Éducation artistique — Chant":[
-"Chants et comptines"
-],
-"Éducation artistique — Travaux manuels":[
-"Découpage, pliage et assemblage"
-],
-"Éducation artistique — Poésie":[
-"Récitation d’un poème court"
-],
-"Éducation artistique — Conte":[
-"Écoute et restitution d’un conte"
-],
-"Éducation artistique — Couture":[
-"Découverte des gestes et matériaux de base"
-],
-"EPS":[
-"Actions locomotrices et non locomotrices",
-"Saut vers l’avant",
-"Saut vers l’arrière",
-"Saut vers le haut",
-"Saut vers le bas",
-"Saut sur le côté",
-"Préparation, réalisation et amélioration d’une action motrice",
-"Retour au calme et rangement du matériel"
-]
+"CP": {
+"Français":["Lecture et compréhension de consignes","Lecture et écriture de syllabes et de mots","Copie de mots et de phrases","Vocabulaire du milieu de vie"],
+"Mathématiques — Arithmétique":["Les nombres de 0 à 99 : comptage et décomptage","Les nombres de 0 à 99 : lecture et écriture en chiffres et en lettres","Les nombres de 0 à 99 : comparaison et rangement","Addition et soustraction des nombres de 0 à 99","Résolution de problèmes sur les nombres de 0 à 99","Le nombre 100 : composition et représentation","Le nombre 100 : identification, lecture et écriture","Intégration des acquis : numération, addition et soustraction","Intégration des acquis : résolution de problèmes"],
+"Mathématiques — Géométrie":["Les solides géométriques : identification et description du cube","Le cube : faces, sommets et arêtes","Résolution de problèmes portant sur les solides géométriques"],
+"Mathématiques — Mesures":["Comparaison de longueurs","Mesures à partir d’objets du milieu de vie"],
+"Éducation sociale — Morale":["Respect et entraide","Politesse et règles de vie"],
+"Éducation sociale — Civisme":["Respect du matériel collectif","Règles de vie à l’école"],
+"Éducation sociale — Histoire-Géographie":["La famille et l’école","Le milieu de vie proche"],
+"Éducation sociale — Langues et culture":["Expressions et pratiques culturelles du milieu"],
+"EST":["Hygiène et santé","Alimentation et protection des aliments","Les différents types de marmites","Utilisation prudente du foyer et du réchaud"],
+"Éducation artistique — Dessin":["Dessin d’objets familiers"],
+"Éducation artistique — Chant":["Chants et comptines"],
+"Éducation artistique — Travaux manuels":["Découpage, pliage et assemblage"],
+"Éducation artistique — Poésie":["Récitation d’un poème court"],
+"Éducation artistique — Conte":["Écoute et restitution d’un conte"],
+"Éducation artistique — Couture":["Découverte des gestes et matériaux de base"],
+"EPS":["Actions locomotrices et non locomotrices","Saut vers l’avant","Saut vers l’arrière","Saut vers l’avant, saut vers l’arrière","Saut vers le haut","Saut vers le bas","Saut sur le côté","Préparation, réalisation et amélioration d’une action motrice","Retour au calme et rangement du matériel"]
 },
-
-"CE1":{
-"Français":["Les diphtongues (notion à préciser selon le support utilisé)","Vocabulaire fonctionnel : mots et expressions relatifs à l’homme et à sa santé","Reformuler des mots et expressions pour améliorer un portrait","Emploi de « ce » et « cette »","Lecture et compréhension d’un texte","Production écrite : améliorer une production"],
-"Mathématiques — Arithmétique":["Numération et comparaison des nombres","Addition et soustraction","Multiplication : premières situations","Résolution de problèmes"],
-"Mathématiques — Géométrie":["Reconnaître et décrire des figures planes","Segments et tracés géométriques"],
-"Mathématiques — Mesures":["Mesures de longueur","Mesures de masse et de capacité","Lire l’heure"],
+"CE1": {
+"Français":["Les diphtongues","Lecture et compréhension de textes courts","Grammaire : la phrase","Vocabulaire du quotidien","Production de phrases simples"],
+"Mathématiques — Arithmétique":["Numération et opérations","Addition et soustraction","Multiplication : premières situations","Résolution de problèmes"],
+"Mathématiques — Géométrie":["Figures géométriques planes","Solides usuels"],
+"Mathématiques — Mesures":["Longueurs et unités usuelles","Mesure du temps"],
 "Éducation sociale — Morale":["Respect et solidarité"],
-"Éducation sociale — Civisme":["Droits et devoirs de l’élève"],
-"Éducation sociale — Histoire-Géographie":["Le quartier ou le village","Repères du milieu de vie"],
-"Éducation sociale — Langues et culture":["Langues et expressions du milieu"],
-"EST":["Hygiène, alimentation et santé","Matériaux et objets du quotidien"],
-"Éducation artistique — Dessin":["Dessiner à partir de formes simples"],
-"Éducation artistique — Chant":["Chant collectif et rythme"],
-"Éducation artistique — Travaux manuels":["Fabrication d’un objet simple"],
-"Éducation artistique — Poésie":["Mémorisation et récitation d’un poème"],
-"Éducation artistique — Conte":["Raconter les principaux événements d’un conte"],
-"Éducation artistique — Couture":["Gestes de base et sécurité"],
-"EPS":["Courir, sauter et lancer selon une consigne"]
+"Éducation sociale — Civisme":["Droits et devoirs à l’école"],
+"Éducation sociale — Histoire-Géographie":["Famille, école et communauté"],
+"Éducation sociale — Langues et culture":["Langues et pratiques culturelles locales"],
+"EST":["Hygiène et santé","Environnement et sécurité"],
+"Éducation artistique — Dessin":["Dessin d’observation"],
+"Éducation artistique — Chant":["Chants et rythmes"],
+"Éducation artistique — Travaux manuels":["Pliage et fabrication d’objets"],
+"Éducation artistique — Poésie":["Récitation et diction"],
+"Éducation artistique — Conte":["Compréhension et restitution d’un conte"],
+"Éducation artistique — Couture":["Gestes simples et matériaux"],
+"EPS":["Actions motrices et jeux collectifs"]
 },
-"CE2":{
-"Français":["Lecture et compréhension","Grammaire : identifier les constituants de la phrase","Conjugaison : formes verbales usuelles","Orthographe et vocabulaire","Production écrite"],
-"Mathématiques — Arithmétique":["Numération et opérations","Multiplication et division dans des situations adaptées","Résolution de problèmes"],
-"Mathématiques — Géométrie":["Figures planes et propriétés observables","Tracés à la règle"],
-"Mathématiques — Mesures":["Longueurs, masses et capacités","Durées et calendrier"],
+"CE2": {
+"Français":["Lecture et compréhension","Grammaire et conjugaison","Orthographe et vocabulaire","Production écrite"],
+"Mathématiques — Arithmétique":["Numération","Opérations sur les nombres","Résolution de problèmes"],
+"Mathématiques — Géométrie":["Droites et figures planes","Solides géométriques"],
+"Mathématiques — Mesures":["Longueurs, masses et capacités","Durées et monnaie"],
 "Éducation sociale — Morale":["Responsabilité et solidarité"],
-"Éducation sociale — Civisme":["Règles et symboles de la vie collective"],
-"Éducation sociale — Histoire-Géographie":["Milieu local et activités humaines"],
+"Éducation sociale — Civisme":["Règles collectives et biens publics"],
+"Éducation sociale — Histoire-Géographie":["Milieu local et vie communautaire"],
 "Éducation sociale — Langues et culture":["Patrimoine culturel local"],
-"EST":["Hygiène et prévention","Objets techniques et matériaux"],
-"Éducation artistique — Dessin":["Composition à partir de formes et lignes"],
-"Éducation artistique — Chant":["Chant et expression rythmique"],
-"Éducation artistique — Travaux manuels":["Réalisation d’un objet avec matériaux disponibles"],
+"EST":["Santé, hygiène et environnement"],
+"Éducation artistique — Dessin":["Dessin et composition"],
+"Éducation artistique — Chant":["Chant et rythme"],
+"Éducation artistique — Travaux manuels":["Fabrication et assemblage"],
 "Éducation artistique — Poésie":["Récitation expressive"],
-"Éducation artistique — Conte":["Structure et restitution du récit"],
-"Éducation artistique — Couture":["Assemblage simple et sécurité"],
-"EPS":["Coordination, course, saut et lancer"]
+"Éducation artistique — Conte":["Conte et expression orale"],
+"Éducation artistique — Couture":["Techniques manuelles simples"],
+"EPS":["Course, saut et jeux collectifs"]
 },
-"CM1":{
-"Français":["Compréhension et étude de textes","Grammaire et analyse de la phrase","Conjugaison et valeurs des temps","Orthographe et vocabulaire","Production de textes variés"],
-"Mathématiques — Arithmétique":["Numération et opérations sur les nombres","Fractions et décimaux selon la progression","Résolution de problèmes"],
-"Mathématiques — Géométrie":["Figures et solides","Angles, droites et tracés"],
-"Mathématiques — Mesures":["Unités de longueur, masse et capacité","Périmètres et durées"],
-"Éducation sociale — Morale":["Responsabilité et vie en communauté"],
-"Éducation sociale — Civisme":["Citoyenneté et respect des biens communs"],
-"Éducation sociale — Histoire-Géographie":["Repères historiques et géographiques du Bénin"],
-"Éducation sociale — Langues et culture":["Patrimoine, langues et traditions"],
-"EST":["Santé, environnement et prévention","Objets et techniques du milieu"],
-"Éducation artistique — Dessin":["Composition et représentation"],
-"Éducation artistique — Chant":["Chant choral et rythme"],
-"Éducation artistique — Travaux manuels":["Conception et fabrication d’un objet"],
-"Éducation artistique — Poésie":["Récitation et interprétation"],
-"Éducation artistique — Conte":["Récit oral et expression"],
-"Éducation artistique — Couture":["Techniques élémentaires et sécurité"],
-"EPS":["Coordination et activités athlétiques adaptées"]
-},
-"CM2":{
-"Français":["Lecture analytique et compréhension","Grammaire, conjugaison et orthographe","Vocabulaire et reformulation","Production de textes variés"],
-"Mathématiques — Arithmétique":["Numération, opérations et problèmes complexes","Fractions et nombres décimaux selon la progression"],
-"Mathématiques — Géométrie":["Construction de figures et propriétés","Solides et représentation"],
-"Mathématiques — Mesures":["Conversions d’unités","Périmètre, aire et durées selon la progression"],
-"Éducation sociale — Morale":["Engagement, responsabilité et solidarité"],
-"Éducation sociale — Civisme":["Citoyenneté et préparation à la vie collective"],
-"Éducation sociale — Histoire-Géographie":["Histoire et géographie du Bénin selon la progression"],
-"Éducation sociale — Langues et culture":["Patrimoine et diversité culturelle"],
-"EST":["Santé, environnement et techniques du quotidien"],
+"CM1": {
+"Français":["Lecture et compréhension de textes","Grammaire et conjugaison","Orthographe et vocabulaire","Production de textes"],
+"Mathématiques — Arithmétique":["Numération et opérations","Fractions et nombres décimaux","Résolution de problèmes"],
+"Mathématiques — Géométrie":["Figures et propriétés géométriques","Construction de figures"],
+"Mathématiques — Mesures":["Longueurs, aires et périmètres","Masses, capacités et durées"],
+"Éducation sociale — Morale":["Droits, devoirs et solidarité"],
+"Éducation sociale — Civisme":["Citoyenneté et biens communs"],
+"Éducation sociale — Histoire-Géographie":["Histoire et géographie du milieu"],
+"Éducation sociale — Langues et culture":["Cultures et patrimoine"],
+"EST":["Santé, environnement et techniques usuelles"],
 "Éducation artistique — Dessin":["Dessin d’observation et composition"],
-"Éducation artistique — Chant":["Chant collectif et interprétation"],
-"Éducation artistique — Travaux manuels":["Projet de fabrication et finition"],
+"Éducation artistique — Chant":["Chant et expression musicale"],
+"Éducation artistique — Travaux manuels":["Réalisation d’objets"],
+"Éducation artistique — Poésie":["Récitation et expression"],
+"Éducation artistique — Conte":["Récit et compréhension"],
+"Éducation artistique — Couture":["Techniques de base"],
+"EPS":["Athlétisme et jeux collectifs"]
+},
+"CM2": {
+"Français":["Lecture et analyse de textes","Grammaire et conjugaison","Orthographe et vocabulaire","Rédaction"],
+"Mathématiques — Arithmétique":["Numération et opérations","Fractions et nombres décimaux","Proportionnalité et problèmes"],
+"Mathématiques — Géométrie":["Figures, angles et constructions","Solides géométriques"],
+"Mathématiques — Mesures":["Périmètres, aires et volumes","Mesures et conversions"],
+"Éducation sociale — Morale":["Responsabilité et solidarité"],
+"Éducation sociale — Civisme":["Citoyenneté et vie démocratique"],
+"Éducation sociale — Histoire-Géographie":["Histoire et géographie du Bénin"],
+"Éducation sociale — Langues et culture":["Patrimoine et diversité culturelle"],
+"EST":["Santé, environnement et techniques"],
+"Éducation artistique — Dessin":["Dessin et composition"],
+"Éducation artistique — Chant":["Chant et pratique musicale"],
+"Éducation artistique — Travaux manuels":["Conception et réalisation"],
 "Éducation artistique — Poésie":["Récitation expressive"],
-"Éducation artistique — Conte":["Narration et interprétation"],
-"Éducation artistique — Couture":["Techniques de base et sécurité"],
-"EPS":["Activités physiques, coordination et règles de sécurité"]
+"Éducation artistique — Conte":["Conte et expression orale"],
+"Éducation artistique — Couture":["Réalisation manuelle"],
+"EPS":["Athlétisme, jeux et activités physiques"]
 }
 };
 
-const $ = id => document.getElementById(id);
+const phasesBase = [
+{nom:"1. Activités préparatoires",duree:5,consigne:"Prépare-toi, organise le matériel et participe à la mise en train.",attendu:"L’apprenant est prêt et respecte les consignes de sécurité."},
+{nom:"2. Introduction",duree:5,consigne:"Rappelle les acquis antérieurs. Observe la situation et exprime ce que tu sais.",attendu:"L’apprenant mobilise ses acquis et comprend l’objectif."},
+{nom:"3. Construction / réalisation",duree:10,consigne:"Observe, décris, analyse la situation et propose une manière de résoudre la tâche.",attendu:"L’apprenant identifie la tâche et propose une démarche."},
+{nom:"4. Exploration et exécution",duree:5,consigne:"Réalise la tâche individuellement ou avec un partenaire. Observe et améliore ta production.",attendu:"L’apprenant exécute la tâche et tient compte des observations."},
+{nom:"5. Retour, objectivation et évaluation",duree:3,consigne:"Explique ce que tu as appris, ce qui a été difficile et comment tu peux progresser.",attendu:"L’apprenant explique ses apprentissages et montre ce qu’il sait faire."},
+{nom:"6. Post-apprentissage",duree:2,consigne:"Range le matériel et indique une situation dans laquelle tu pourras réutiliser l’apprentissage.",attendu:"L’apprenant range le matériel et envisage un réinvestissement."}
+];
 
-function escapeHTML(s){
- return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-}
-function initDisciplines(){
- $("discipline").innerHTML=disciplines.map(d=>`<option>${escapeHTML(d)}</option>`).join("");
- chargerNotions();
-}
+const $ = id => document.getElementById(id);
+const champ = id => $(id).value.trim();
+
 function chargerNotions(){
- const classe=$("classe").value, disc=$("discipline").value;
- const notions=(catalogue[classe]&&catalogue[classe][disc])||[];
- $("notionCatalogue").innerHTML='<option value="">— Choisir une notion —</option>'+notions.map(n=>`<option>${escapeHTML(n)}</option>`).join("");
+ const classe = champ("classe");
+ const discipline = champ("discipline");
+ const liste = (catalogue[classe] && catalogue[classe][discipline]) || ["Notion à préciser selon le programme"];
+ $("notionCatalogue").innerHTML = "";
+ liste.forEach(notion=>{
+  const option = document.createElement("option");
+  option.value = notion;
+  option.textContent = notion;
+  $("notionCatalogue").appendChild(option);
+ });
+ $("titre").value = liste[0] || "";
+ appliquerModele();
 }
-function choisirNotion(){
- const n=$("notionCatalogue").value;
- if(n){$("titre").value=n;}
- const d=$("discipline").value;
- $("domaine").value=d.includes("Mathématiques")?d.split("—")[1].trim():d.split("—").slice(1).join("—").trim()||d;
- if($("classe").value==="CE1" && d==="Français" && n.includes("homme et à sa santé")){
-  $("duree").value="45 min";
-  $("competence").value="Écrire des textes de types et de fonctions variés.";
-  $("connaissances").value="La vie des mots et expressions relatifs à l’homme et à sa santé.";
-  $("strategies").value="Brainstorming ; travail individuel ; travail en groupe ; travail collectif.";
-  $("materiel").value="Production de l’élève.";
-  $("phase1").value="Rappel : rappeler le thème étudié en vocabulaire et les mots connus sur le portrait.";
-  $("phase2").value="Mise en situation : l’élève a produit un texte sur une personne qui l’a impressionné par ses aspects physiques et moraux. Faire émerger le projet d’écriture et annoncer l’apprentissage.";
-  $("phase3").value="Lire la production transcrite au tableau ; préciser le sens ; reformuler les idées avec des mots ou expressions appropriés ; retenir quelques reformulations ; repérer, épeler et écrire les mots choisis ; améliorer la production.";
-  $("phase4").value="Réutiliser les mots ou expressions reformulés dans une phrase puis améliorer la production écrite.";
-  $("phase5").value="Faire dire ce qui a été appris, ce qui a retenu l’attention et les difficultés rencontrées.";
-  $("phase6").value="Évaluation orale : expliquer les mots ou expressions reformulés. Évaluation écrite : écrire correctement un mot ou une expression reformulée.";
-  $("attendu3").value="Les élèves reformulent des mots et expressions adaptés au portrait et améliorent leur production.";
-  $("attendu6").value="Les élèves expliquent oralement et écrivent correctement des mots ou expressions reformulés.";
+
+function creerChampsPhases(){
+ $("phases").innerHTML = "";
+ phasesBase.forEach((phase,i)=>{
+  const bloc = document.createElement("div");
+  bloc.className = "full";
+  bloc.innerHTML = `
+   <h3>${phase.nom}</h3>
+   <div class="formgrid">
+    <div><label for="duree${i}">Durée (min)</label><input id="duree${i}" type="number" min="0" value="${phase.duree}"></div>
+    <div><label for="strategie${i}">Stratégie / organisation</label><input id="strategie${i}" value="${i===0?"Collectif":i===3?"Individuel ou par paire":"Collectif, individuel ou en groupe"}"></div>
+    <div class="full"><label for="consigne${i}">Consignes / activités de l’enseignant et des apprenants</label><textarea id="consigne${i}">${phase.consigne}</textarea></div>
+    <div class="full"><label for="attendu${i}">Résultats attendus</label><textarea id="attendu${i}">${phase.attendu}</textarea></div>
+   </div>`;
+  $("phases").appendChild(bloc);
+ });
+}
+
+function appliquerModele(){
+ const notion = champ("notionCatalogue");
+ const discipline = champ("discipline");
+ if(champ("classe")==="CP" && discipline==="EPS" && notion==="Saut vers l’avant, saut vers l’arrière"){
+  $("duree").value = 45;
+  $("sa").value = "SA 7";
+  $("sequence").value = "Séquence 2";
+  $("numero").value = "Fiche n° 2";
+  $("competence").value = "Agir dans divers contextes de pratique d’activités physiques et interagir dans divers contextes de pratique d’activités physiques (formulation reprise du document fourni).";
+  $("connaissances").value = "Réalisation de sauts vers l’avant et vers l’arrière.";
+  $("strategies").value = "Travail individuel et par paire ; travail en groupe et collectif ; apprentissage par problème.";
+  $("materiel").value = "Terrain adapté, craie ou chaux pour le marquage, fanions, image et autres matériels nécessaires.";
+  $("prerequis").value = "Dire comment réaliser un saut vers l’avant et rappeler les règles de sécurité.";
+  $("objectif").value = "Réaliser des sauts vers l’avant et vers l’arrière en respectant les consignes et les règles de sécurité.";
+  $("situation").value = "Observer une image présentant des sauts, décrire ce qui se passe et proposer comment réaliser les mouvements en sécurité.";
+  $("trace").value = "Pour sauter en sécurité, je respecte les consignes, j’observe l’espace disponible et j’écoute les indications de l’enseignant. Les étapes techniques précises doivent être adaptées au guide de la classe.";
+  $("remediation").value = "Reprendre la démonstration lentement, aménager la zone de saut et accompagner individuellement les apprenants qui rencontrent des difficultés.";
+  $("projection").value = "Réutiliser les techniques apprises pendant les jeux et activités physiques adaptés.";
+  const consignes = [
+   "Porte ta tenue de sport. Forme les rangs et rejoins le terrain en marchant de façon organisée. Effectue une mise en train adaptée.",
+   "Rappelle une activité déjà étudiée. Dis ce que tu sais sur le saut vers l’avant et vers l’arrière. Écoute l’objectif de la séance.",
+   "Observe l’image. Décris ce que tu vois. Explique comment réaliser les sauts et indique les mesures de sécurité à prendre.",
+   "Propose un ordre d’exécution. Essaie le saut, observe les camarades, compare les manières de faire et réalise les sauts seul puis par paire, selon les possibilités du terrain.",
+   "Dis ce que tu as appris, les difficultés rencontrées et comment tu les as surmontées. Montre le mouvement demandé dans des conditions sécurisées.",
+   "Effectue le retour au calme adapté au guide. Range le matériel et forme les rangs."
+  ];
+  const attendus = [
+   "L’apprenant est prêt, suit les consignes et participe à la mise en train.",
+   "L’apprenant rappelle un acquis et exprime ce qu’il sait du saut.",
+   "L’apprenant décrit l’image et identifie les précautions de sécurité.",
+   "L’apprenant essaie, observe, compare et améliore sa réalisation.",
+   "L’apprenant explique son apprentissage et réalise le mouvement demandé.",
+   "L’apprenant revient au calme et range le matériel."
+  ];
+  const durees = [7,5,8,15,5,5];
+  const strategies = ["Collectif","Collectif","Observation et échange collectif","Individuel puis par paire","Individuel et collectif","Collectif"];
+  consignes.forEach((v,i)=>{ $("consigne"+i).value=v; $("attendu"+i).value=attendus[i]; $("duree"+i).value=durees[i]; $("strategie"+i).value=strategies[i]; });
+ } else {
+  $("duree").value = champ("duree") || 30;
  }
 }
-function val(id){return $(id).value.trim();}
-function para(label,value){if(!value)return "";return `<p><strong>${escapeHTML(label)} :</strong> ${escapeHTML(value)}</p>`;}
-function section(title,content){return content?`<section class="fiche-section"><h3>${escapeHTML(title)}</h3>${content}</section>`:"";}
 
-function generer(){
- const titre=val("titre")||val("notionCatalogue");
- if(!titre){alert("Choisis une notion ou saisis le titre de la leçon.");$("titre").focus();return;}
- const classe=val("classe"),disc=val("discipline");
- const date=val("date")?new Date(val("date")+"T12:00:00").toLocaleDateString("fr-FR"):"";
- const metas=[
- ["Classe",classe],["Discipline",disc],["Domaine",val("domaine")],["Durée",val("duree")],
- ["Unité / période",val("unite")],["Situation d’apprentissage",val("sa")],["Séquence / séance",val("sequence")],
- ["Fiche N°",val("numero")],["Date",date],["École",val("ecole")],["Enseignant(e)",val("enseignant")],["Effectif",val("effectif")]
- ].filter(x=>x[1]);
-
- let html=`<div class="fiche-head"><h2>Fiche de préparation pédagogique</h2><h3>${escapeHTML(titre)}</h3><p>Bot pédagogique APC Bénin — modèle à adapter au guide de référence</p></div>`;
- html+=`<div class="meta">${metas.map(x=>`<div><strong>${escapeHTML(x[0])} :</strong> ${escapeHTML(x[1])}</div>`).join("")}</div>`;
- html+=section("I. CONTENUS DE FORMATION",
- para("Compétence disciplinaire",val("competence"))+
- para("Compétences transversales / transdisciplinaires",val("competencesTrans"))+
- para("Connaissances et techniques",val("connaissances"))+
- para("Objectif(s) d’apprentissage",val("objectif"))+
- para("Prérequis",val("prerequis"))+
- para("Stratégies d’enseignement / apprentissage / évaluation",val("strategies"))+
- para("Matériel",val("materiel"))+
- para("Situation de départ",val("situation")));
-
- const phases=[
- ["Activités préparatoires / rappel","phase1","attendu1"],
- ["Introduction / mise en situation","phase2","attendu2"],
- ["Réalisation / construction des savoirs","phase3","attendu3"],
- ["Application / entraînement","phase4","attendu4"],
- ["Retour / objectivation","phase5","attendu5"],
- ["Évaluation","phase6","attendu6"]
- ];
- const rows=phases.map(p=>`<tr><th>${escapeHTML(p[0])}</th><td>${escapeHTML(val(p[1]))}</td><td>${escapeHTML(val(p[2]))}</td></tr>`).join("");
- html+=`<section class="fiche-section"><h3>II. DÉROULEMENT</h3><table><thead><tr><th>Étapes / phases</th><th>Consignes et activités de l’enseignant / des élèves</th><th>Résultats attendus</th></tr></thead><tbody>${rows}</tbody></table>${val("consigne")?`<p><strong>Consigne / exercice d’évaluation :</strong> ${escapeHTML(val("consigne"))}</p>`:""}</section>`;
- html+=section("III. SYNTHÈSE / TRACE ÉCRITE",para("À retenir",val("trace")));
- html+=section("IV. REMÉDIATION ET PROJECTION",para("Remédiation / différenciation",val("remediation"))+para("Réinvestissement / projection",val("projection")));
+function echapper(texte){
+ return String(texte).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function afficherValeur(id){
+ return echapper(champ(id)||"À compléter").replace(/\n/g,"<br>");
+}
+function genererFiche(){
+ const phases = phasesBase.map((p,i)=>({
+  nom:p.nom,
+  duree:champ("duree"+i)||"0",
+  strategie:champ("strategie"+i),
+  consigne:champ("consigne"+i),
+  attendu:champ("attendu"+i)
+ }));
+ const total = phases.reduce((s,p)=>s+(Number(p.duree)||0),0);
+ const html = `
+ <div class="fiche-entete">
+ <h2>FICHE DE PRÉPARATION PÉDAGOGIQUE</h2>
+ <strong>Approche par compétences — Bénin</strong>
+ </div>
+ <table>
+ <tr><th>École</th><td>${afficherValeur("ecole")}</td><th>Enseignant(e)</th><td>${afficherValeur("enseignant")}</td></tr>
+ <tr><th>Classe</th><td>${afficherValeur("classe")}</td><th>Discipline</th><td>${afficherValeur("discipline")}</td></tr>
+ <tr><th>Date</th><td>${afficherValeur("date")}</td><th>Durée annoncée</th><td>${afficherValeur("duree")} minutes</td></tr>
+ <tr><th>SA</th><td>${afficherValeur("sa")}</td><th>Séquence / fiche</th><td>${afficherValeur("sequence")} — ${afficherValeur("numero")}</td></tr>
+ <tr><th>Période / trimestre</th><td colspan="3">${afficherValeur("periode")}</td></tr>
+ <tr><th>Titre</th><td colspan="3"><strong>${afficherValeur("titre")}</strong></td></tr>
+ </table>
+ <h3>I. CONTENUS DE FORMATION</h3>
+ <p><strong>Compétence disciplinaire :</strong> ${afficherValeur("competence")}</p>
+ <p><strong>Compétences transversales et transdisciplinaires :</strong> ${afficherValeur("competencesTrans")}</p>
+ <p><strong>Connaissances et techniques :</strong> ${afficherValeur("connaissances")}</p>
+ <p><strong>Objectif d’apprentissage / résultat final attendu :</strong> ${afficherValeur("objectif")}</p>
+ <p><strong>Prérequis :</strong> ${afficherValeur("prerequis")}</p>
+ <p><strong>Situation de départ :</strong> ${afficherValeur("situation")}</p>
+ <p><strong>Stratégies :</strong> ${afficherValeur("strategies")}</p>
+ <p><strong>Matériel :</strong> ${afficherValeur("materiel")}</p>
+ <h3>II. DÉROULEMENT</h3>
+ <table><thead><tr><th>Phases / durée</th><th>Consignes et activités</th><th>Stratégies</th><th>Résultats attendus</th></tr></thead><tbody>
+ ${phases.map(p=>`<tr><th>${echapper(p.nom)}<br>${echapper(p.duree)} min</th><td>${echapper(p.consigne).replace(/\n/g,"<br>")}</td><td>${echapper(p.strategie)}</td><td>${echapper(p.attendu).replace(/\n/g,"<br>")}</td></tr>`).join("")}
+ </tbody></table>
+ <p><strong>Total des durées des phases :</strong> ${total} minutes. <span class="note">Vérifie que ce total correspond à la durée prévue.</span></p>
+ <h3>III. TRACE ÉCRITE / SYNTHÈSE</h3><p>${afficherValeur("trace")}</p>
+ <h3>IV. REMÉDIATION</h3><p>${afficherValeur("remediation")}</p>
+ <h3>V. PROJECTION / RÉINVESTISSEMENT</h3><p>${afficherValeur("projection")}</p>
+ <p class="note">Document généré par le Bot pédagogique APC Bénin. Les formulations et contenus doivent être vérifiés avec les programmes, guides et documents officiels applicables.</p>`;
  $("fiche").innerHTML=html;
- $("message").textContent="Fiche générée. Vérifie les informations et les consignes avant l’impression.";
+ $("message").textContent="Fiche générée. Vérifie les informations et les durées avant l’impression.";
 }
-function viderPreparation(){
- ["prerequis","objectif","situation","trace","remediation","projection","phase1","attendu1","phase2","attendu2","phase3","attendu3","phase4","attendu4","phase5","attendu5","phase6","attendu6","consigne"].forEach(id=>$(id).value="");
- $("message").textContent="Les champs de préparation ont été effacés.";
-}
-function texteFiche(){
- const node=$("fiche");
- return node.innerText||node.textContent||"";
-}
+
 $("classe").addEventListener("change",chargerNotions);
 $("discipline").addEventListener("change",chargerNotions);
-$("notionCatalogue").addEventListener("change",choisirNotion);
-$("generer").addEventListener("click",generer);
-$("vider").addEventListener("click",viderPreparation);
-$("imprimer").addEventListener("click",()=>{
- if(!$("fiche").querySelector(".fiche-head")){alert("Génère d’abord la fiche.");return;}
- window.print();
+$("notionCatalogue").addEventListener("change",()=>{
+ $("titre").value=champ("notionCatalogue");
+ appliquerModele();
 });
+$("generer").addEventListener("click",genererFiche);
+$("imprimer").addEventListener("click",()=>{genererFiche();window.print();});
 $("copier").addEventListener("click",async()=>{
- if(!$("fiche").querySelector(".fiche-head")){alert("Génère d’abord la fiche.");return;}
- const t=texteFiche();
+ genererFiche();
  try{
-  await navigator.clipboard.writeText(t);
-  $("message").textContent="Texte de la fiche copié.";
+  const texte=$("fiche").innerText;
+  await navigator.clipboard.writeText(texte);
+  $("message").textContent="Fiche copiée dans le presse-papiers.";
  }catch(e){
-  const area=document.createElement("textarea");
-  area.value=t;document.body.appendChild(area);area.select();
-  const ok=document.execCommand("copy");area.remove();
-  $("message").textContent=ok?"Texte de la fiche copié.":"Copie automatique indisponible : sélectionne le texte de la fiche et copie-le manuellement.";
+  const selection=window.getSelection();
+  const range=document.createRange();
+  range.selectNodeContents($("fiche"));
+  selection.removeAllRanges();selection.addRange(range);
+  $("message").textContent="Sélectionne le texte affiché puis copie-le.";
  }
 });
-initDisciplines();
+$("vider").addEventListener("click",()=>{
+ if(!confirm("Effacer les informations du formulaire ?"))return;
+ document.querySelectorAll(".formulaire input,.formulaire textarea").forEach(el=>el.value="");
+ $("duree").value=30;
+ creerChampsPhases();
+ chargerNotions();
+ $("message").textContent="Formulaire réinitialisé.";
+});
+
+creerChampsPhases();
+chargerNotions();
 </script>
 </body>
 </html>
