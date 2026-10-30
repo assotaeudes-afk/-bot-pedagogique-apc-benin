@@ -375,7 +375,39 @@ function lirePhases() {
     attendu:$(`attendu${i}`).value.trim()
   }));
 }
+function repartirDureePhases() {
+  const dureeTotale = Math.max(1, Number($("duree").value) || 30);
 
+  const dureesBase = phasesBase.map(p => p.duree);
+  const sommeBase = dureesBase.reduce((a, b) => a + b, 0);
+
+  const valeurs = dureesBase.map((d, i) => ({
+    index: i,
+    valeur: (d / sommeBase) * dureeTotale
+  }));
+
+  const durees = valeurs.map(v => Math.floor(v.valeur));
+
+  let reste = dureeTotale -
+    durees.reduce((a, b) => a + b, 0);
+
+  valeurs
+    .map(v => ({
+      index: v.index,
+      decimal: v.valeur - Math.floor(v.valeur)
+    }))
+    .sort((a, b) => b.decimal - a.decimal)
+    .forEach(v => {
+      if (reste > 0) {
+        durees[v.index]++;
+        reste--;
+      }
+    });
+
+  durees.forEach((d, i) => {
+    $(`duree${i}`).value = d;
+  });
+}
 function genererFiche() {
   const phases = lirePhases();
   const total = phases.reduce((s,p) => s + p.duree, 0);
@@ -469,6 +501,7 @@ $("notionCatalogue").addEventListener("change",() => {
   $("titre").value = champ("notionCatalogue");
   appliquerModele();
 });
+$("duree").addEventListener("input", repartirDureePhases);
 $("generer").addEventListener("click",genererFiche);
 $("imprimer").addEventListener("click",() => { genererFiche(); window.print(); });
 $("copier").addEventListener("click",async() => {
