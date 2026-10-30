@@ -501,6 +501,7 @@ $("notionCatalogue").addEventListener("change",() => {
   $("titre").value = champ("notionCatalogue");
   appliquerModele();
 });
+$("duree").addEventListener("input", repartirDureePhases);
 $("generer").addEventListener("click",genererFiche);
 $("imprimer").addEventListener("click",() => { genererFiche(); window.print(); });
 $("copier").addEventListener("click",async() => {
