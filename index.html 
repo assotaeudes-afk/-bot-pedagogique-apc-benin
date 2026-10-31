@@ -328,6 +328,102 @@ const MATH_CI = {
     ["Abstraction / symbolisation","Relier l'action au signe − et à une écriture adaptée si cette symbolisation figure dans les acquis de la classe.","Associent la manipulation à la représentation symbolique proposée.","Comprendre le sens de la soustraction."],
     ["Objectivation et réinvestissement","Faire raconter la démarche et proposer un nouveau problème de retrait.","Expliquent puis résolvent une nouvelle situation.","Réinvestir l'idée de reste."]
    ], trace:"Soustraire, c'est retirer une quantité d'une collection et chercher ce qui reste.", exercise:"1. Prépare une collection.\n2. Retire quelques objets.\n3. Compte les objets restants et représente la situation.", correction:"Le nombre annoncé doit être celui des objets restant après le retrait. Adapter les quantités aux acquis du CI."
+  },
+  "Associer une quantité à une représentation":{
+   objective:"Associer une petite collection d'objets à une représentation figurée ou chiffrée déjà étudiée.",
+   prerequisite:"Dénombrer de petites collections et observer des dessins ou des symboles.",
+   material:"Graines, jetons, cartes à points, cartes-nombres, images et ardoises.",
+   situation:"L'enseignant présente plusieurs collections et plusieurs cartes à points. Les apprenants doivent retrouver la carte qui représente chaque collection.",
+   stages:[
+    ["Introduction","Présenter une collection et plusieurs cartes de représentations ; demander comment retrouver la carte correspondante.","Observent les objets et les cartes, puis proposent une association.","Comprendre qu'une même quantité peut être montrée de plusieurs façons."],
+    ["Manipulation concrète","Faire dénombrer les objets puis rechercher la carte portant le même nombre de points.","Comptent les objets et associent la carte correspondante.","Associer correctement une collection et une représentation."],
+    ["Représentation","Faire dessiner la collection ou placer des jetons sur une carte vierge.","Dessinent ou organisent les jetons pour représenter la quantité.","Passer de l'objet réel à une représentation figurée."],
+    ["Abstraction / verbalisation","Présenter l'écriture chiffrée correspondante si elle a déjà été étudiée et faire verbaliser le lien entre les représentations.","Associent objets, points, dessins et chiffre connu.","Relier plusieurs représentations d'une même quantité."],
+    ["Objectivation et réinvestissement","Proposer de nouvelles associations sans modèle immédiat.","Choisissent une représentation et expliquent leur choix.","Réinvestir l'association quantité-représentation de manière autonome."]
+   ],
+   trace:"Une quantité peut être représentée par des objets, des dessins, des points ou un chiffre déjà appris. Ces représentations correspondent à la même quantité.",
+   exercise:"1. Compte les objets et relie-les à la carte à points correspondante.\n2. Dessine une collection qui correspond à la carte proposée.\n3. Associe la collection au chiffre étudié.",
+   correction:"Chaque collection doit être reliée à une représentation de même quantité. N'utiliser que les chiffres déjà abordés dans la progression."
+  },
+  "Reconnaître et construire les nombres étudiés":{
+   objective:"Construire une quantité demandée et reconnaître le nombre correspondant parmi les nombres déjà étudiés.",
+   prerequisite:"Dénombrer et associer une collection à une représentation.",
+   material:"Bâtonnets, graines, capsules, cartes-nombres, tableau et ardoises.",
+   situation:"L'enseignant montre une carte-nombre connue et demande aux apprenants de préparer une collection qui représente cette quantité.",
+   stages:[
+    ["Introduction","Présenter une carte-nombre connue et demander comment fabriquer la collection correspondante.","Observent la carte et expliquent ce qu'ils doivent préparer.","Identifier la quantité demandée."],
+    ["Manipulation concrète","Faire prendre les objets un à un jusqu'à obtenir la quantité demandée.","Constituent la collection et vérifient en comptant.","Construire une collection de quantité exacte."],
+    ["Représentation","Faire représenter la collection par des points ou des dessins.","Dessinent ou marquent la quantité construite.","Représenter la quantité sans les objets réels."],
+    ["Abstraction / verbalisation","Faire reconnaître la carte-nombre et associer le nom oral, la collection et le symbole connu.","Disent le nombre et montrent les différentes représentations correspondantes.","Relier quantité, nom oral et écriture chiffrée étudiée."],
+    ["Objectivation et réinvestissement","Distribuer d'autres cartes-nombres connues et demander de construire les collections correspondantes.","Construisent et vérifient individuellement leurs collections.","Reconnaître et construire les nombres de la progression."]
+   ],
+   trace:"Pour construire un nombre, je prépare une collection qui contient exactement la quantité demandée. Je peux vérifier en comptant les objets un à un.",
+   exercise:"1. Construis une collection correspondant à une carte-nombre connue.\n2. Dessine cette collection.\n3. Relie le dessin à la carte-nombre correspondante.",
+   correction:"La collection doit contenir exactement le nombre d'éléments demandé. Adapter les cartes aux nombres déjà enseignés."
+  },
+  "Lire et écrire les nombres étudiés":{
+   objective:"Lire oralement et écrire correctement les nombres déjà étudiés, en chiffres et selon les apprentissages prévus en lettres.",
+   prerequisite:"Reconnaître les quantités et associer les collections aux écritures chiffrées.",
+   material:"Cartes-nombres, étiquettes, tableau, ardoises, cahiers et matériel de manipulation.",
+   situation:"Des cartes-nombres sont affichées au tableau. Les apprenants doivent les lire puis retrouver ou produire l'écriture demandée.",
+   stages:[
+    ["Introduction","Faire rappeler quelques nombres connus à partir de collections ou de cartes.","Observent, nomment les nombres et rappellent leurs acquis.","Mobiliser les nombres déjà rencontrés."],
+    ["Manipulation et observation","Faire associer chaque carte-nombre à une collection correspondante.","Comptent les objets et choisissent la carte adaptée.","Comprendre le lien entre quantité et écriture du nombre."],
+    ["Lecture guidée","Présenter les nombres de la séance et faire lire collectivement puis individuellement.","Prononcent les nombres et les distinguent visuellement.","Lire correctement les nombres étudiés."],
+    ["Écriture","Montrer le tracé des chiffres et faire écrire sur ardoise ; travailler l'écriture en lettres uniquement si elle est prévue et acquise.","Tracent les chiffres puis vérifient leur production avec le modèle.","Écrire lisiblement les nombres de la séance."],
+    ["Objectivation et évaluation","Dicter quelques nombres étudiés et faire associer lecture, écriture et quantité.","Lis­ent, écrivent et associent individuellement les nombres.","Montrer la maîtrise de la lecture et de l'écriture des nombres abordés."]
+   ],
+   trace:"Un nombre peut être lu et écrit. Son écriture chiffrée représente une quantité. Je m'entraîne à lire et à tracer les nombres étudiés en respectant leur forme.",
+   exercise:"1. Lis les nombres présentés par le maître.\n2. Écris sur ton ardoise les nombres dictés.\n3. Relie chaque nombre à la collection correspondante.",
+   correction:"Vérifier la lecture, le sens des chiffres et leur tracé. N'évaluer que les nombres effectivement enseignés."
+  },
+  "Ranger et comparer des nombres":{
+   objective:"Comparer et ranger des nombres déjà étudiés en s'appuyant sur les collections, les représentations et les acquis de la classe.",
+   prerequisite:"Lire les nombres étudiés et comparer des collections.",
+   material:"Cartes-nombres, collections de jetons, bande numérique si disponible et ardoises.",
+   situation:"Plusieurs cartes-nombres sont mélangées. Les apprenants doivent les organiser du plus petit au plus grand ou dans l'ordre inverse selon la consigne.",
+   stages:[
+    ["Introduction","Présenter deux collections puis leurs cartes-nombres et demander laquelle représente la plus grande quantité.","Comparent les collections et justifient leur choix.","Comprendre le sens de la comparaison des nombres."],
+    ["Manipulation concrète","Faire constituer ou associer des collections aux nombres puis comparer les quantités.","Manipulent, dénombrent et comparent les collections.","S'appuyer sur les quantités pour comparer."],
+    ["Représentation","Faire placer les cartes sur une bande numérique adaptée ou les organiser en ligne.","Positionnent et ordonnent les cartes selon la progression étudiée.","Représenter l'ordre des nombres."],
+    ["Abstraction / verbalisation","Faire employer plus grand, plus petit, avant et après ; introduire les signes de comparaison seulement s'ils sont prévus dans les acquis.","Disent quel nombre est plus grand ou plus petit et expliquent l'ordre choisi.","Comparer et ranger les nombres avec le vocabulaire adapté."],
+    ["Objectivation et réinvestissement","Proposer une nouvelle série de nombres à comparer et à ranger.","Rangent les nombres et vérifient leur travail.","Réinvestir la comparaison et le rangement des nombres connus."]
+   ],
+   trace:"Comparer des nombres permet de dire lequel est plus grand ou plus petit. Ranger des nombres, c'est les placer dans un ordre demandé.",
+   exercise:"1. Compare deux nombres connus à partir de leurs collections.\n2. Range trois cartes-nombres du plus petit au plus grand.\n3. Range-les du plus grand au plus petit.",
+   correction:"L'ordre doit respecter la valeur des nombres. Limiter les séries aux nombres étudiés et utiliser la manipulation si nécessaire."
+  },
+  "Décomposer et recomposer des nombres":{
+   objective:"Décomposer une petite quantité en plusieurs parties et recomposer la quantité initiale par réunion des parties.",
+   prerequisite:"Constituer, dénombrer et réunir de petites collections.",
+   material:"Jetons de deux couleurs, graines, bâtonnets, boîtes compartimentées et cartes-nombres connues.",
+   situation:"Une collection est partagée entre deux boîtes. Les apprenants cherchent combien d'objets se trouvent dans chaque boîte et combien il y en a en tout.",
+   stages:[
+    ["Introduction","Présenter une collection et deux récipients ; demander comment partager les objets sans en perdre.","Observent et proposent des façons de répartir les objets.","Comprendre qu'une quantité peut être partagée en parties."],
+    ["Manipulation concrète","Faire répartir les objets en deux groupes, puis réunir les groupes pour retrouver la collection initiale.","Partagent, comptent chaque groupe et réunissent les parties.","Décomposer puis recomposer une quantité par manipulation."],
+    ["Représentation","Faire dessiner les groupes avec des points ou des couleurs différentes.","Représentent les parties puis la collection réunie.","Montrer les parties et le tout par un dessin."],
+    ["Abstraction / verbalisation","Faire expliquer qu'une même quantité peut être obtenue par différentes répartitions, sans imposer une écriture non étudiée.","Décrivent les différentes façons de partager et de recomposer.","Comprendre le lien entre les parties et le tout."],
+    ["Objectivation et réinvestissement","Proposer une nouvelle collection à partager de plusieurs façons.","Effectuent une décomposition et vérifient en recomposant.","Réinvestir la décomposition et la recomposition des quantités connues."]
+   ],
+   trace:"Décomposer, c'est partager une quantité en plusieurs parties. Recomposer, c'est réunir les parties pour retrouver la quantité de départ.",
+   exercise:"1. Partage une collection de jetons en deux groupes.\n2. Compte les objets de chaque groupe.\n3. Réunis les groupes et vérifie que tu retrouves la collection de départ.",
+   correction:"La somme des parties doit correspondre à la collection initiale. Accepter plusieurs répartitions exactes et adaptées aux nombres étudiés."
+  },
+  "Résoudre de petits problèmes additifs":{
+   objective:"Comprendre une situation-problème simple de réunion ou d'ajout, choisir une démarche et trouver le résultat par manipulation ou représentation.",
+   prerequisite:"Comprendre les quantités, dénombrer et réunir de petites collections.",
+   material:"Images, jetons, graines, objets familiers, cartes-nombres et ardoises.",
+   situation:"Awa a quelques graines. Son camarade lui en donne encore. La classe doit trouver combien de graines Awa possède maintenant.",
+   stages:[
+    ["Compréhension de la situation","Raconter ou lire le problème lentement, faire observer l'image et demander ce que l'on sait et ce que l'on cherche.","Écoutent, reformulent et identifient les quantités et la question.","Comprendre la situation et repérer la question."],
+    ["Recherche par manipulation","Faire représenter chaque quantité par des objets puis réunir les collections lorsque la situation le demande.","Préparent les collections, les réunissent et dénombrent le total.","Choisir une action adaptée à la situation."],
+    ["Représentation","Faire dessiner les quantités et leur réunion ou utiliser des marques.","Dessinent les groupes et représentent le résultat.","Traduire la situation par un dessin ou un schéma simple."],
+    ["Mise en commun et verbalisation","Inviter plusieurs apprenants à expliquer leur démarche ; relier la réunion à l'addition si elle a été étudiée.","Présentent leurs démarches et comparent les réponses.","Expliquer comment le résultat a été trouvé."],
+    ["Évaluation et réinvestissement","Proposer un problème analogue avec d'autres objets et des nombres connus.","Résolvent individuellement le nouveau problème.","Réutiliser la démarche dans une situation nouvelle."]
+   ],
+   trace:"Pour résoudre un problème, j'écoute ou je lis l'énoncé, je cherche ce que l'on me demande, je représente la situation, je trouve la réponse et je vérifie.",
+   exercise:"1. Maman a 2 mangues et en reçoit 1 autre. Combien a-t-elle de mangues ?\n2. Représente le problème avec des dessins ou des jetons.\n3. Explique comment tu as trouvé la réponse.",
+   correction:"Exemple : 2 mangues réunies avec 1 mangue donnent 3 mangues. Accepter une résolution par manipulation, dessin ou écriture additive si celle-ci a déjà été enseignée. Adapter les nombres au niveau réel de la classe."
   }
  },
  "Géométrie":{
