@@ -128,10 +128,14 @@ const $ = id => document.getElementById(id);
 
 const D = {
  "Français":{
-  "Lecture et sons":["Les voyelles","Les consonnes","Les syllabes","Les mots","Les phrases","Compréhension de texte"],
-  "Langage oral":["Écouter et comprendre","S'exprimer oralement","Décrire une image"],
-  "Écriture":["Graphisme","Copie de lettres et de mots","Production écrite"],
-  "Grammaire et vocabulaire":["Le nom","Le verbe","Le masculin et le féminin","Le singulier et le pluriel","Le vocabulaire"]
+  "Lecture":["Reconnaissance des lettres étudiées","Lecture de syllabes","Lecture de mots simples","Lecture de phrases simples","Compréhension de petites phrases","Lecture de textes adaptés au niveau"],
+  "Communication orale":["Écouter et comprendre une consigne","Répondre à des questions simples","Se présenter","Présenter une personne","Décrire une image","Raconter une petite histoire","Participer à un échange oral"],
+  "Étude des sons et des lettres":["Leçon 1 : Apprentissage de la lettre-son A","Leçon 2 : Apprentissage de la lettre L","Leçon 3 : Apprentissage de la lettre-son T","Leçon 4 : Apprentissage de la lettre-son O","Leçon 5 : Apprentissage de la lettre-son P","Reconnaissance des voyelles","Reconnaissance des consonnes","Discrimination auditive et visuelle"],
+  "Vocabulaire":["Désignation des objets familiers","Les personnes et les membres de la famille","Les animaux","Les aliments","Les objets de la classe","Les mots de la vie quotidienne"],
+  "Grammaire":["Découverte de la phrase orale","Construction de phrases simples","Identification des mots dans une phrase"],
+  "Conjugaison":["Découverte de l'action","Les actions de la vie quotidienne","Employer des verbes dans des phrases orales"],
+  "Orthographe":["Copie de lettres étudiées","Copie de syllabes","Copie de mots simples","Écriture correcte des mots étudiés"],
+  "Expression écrite":["Graphisme préparatoire","Écriture des lettres étudiées","Copie de syllabes et de mots","Compléter une phrase simple","Produire une phrase avec aide"]
  },
  "Mathématiques":{
   "Arithmétique":["Dénombrement","Les nombres","Comparer des nombres","Addition","Soustraction","Multiplication","Partage et division"],
@@ -260,7 +264,7 @@ function populateNotions(){
  const disc=$("disc").value, domain=$("dom").value, s=$("notion"), old=s.value;
  s.innerHTML="";
  let items=(D[disc]&&D[disc][domain])?D[disc][domain]:[];
- if($("classe").value==="CI" && disc==="Français" && domain==="Lecture et sons"){
+ if($("classe").value==="CI" && disc==="Français" && domain==="Étude des sons et des lettres"){
    items=Object.keys(FR_CI);
  }
  items.forEach(x=>s.add(new Option(x,x)));
@@ -268,7 +272,7 @@ function populateNotions(){
  updateSourceNotice();
 }
 function updateSourceNotice(){
- const isFR=$("classe").value==="CI" && $("disc").value==="Français" && $("dom").value==="Lecture et sons";
+ const isFR=$("classe").value==="CI" && $("disc").value==="Français" && $("dom").value==="Étude des sons et des lettres";
  const isMath=$("classe").value==="CI" && $("disc").value==="Mathématiques";
  $("sourceWarning").textContent=isFR
  ? "Contenu adapté aux leçons A, L, T, O et P relevées dans le Guide pédagogique du manuel Réussir en français au CI (LAHA Éditions, 2024). Les activités sont reformulées et les exemples doivent être vérifiés dans le manuel."
