@@ -572,6 +572,84 @@ const MATH_CI = {
     ["Abstraction / verbalisation","Faire nommer matin, midi et soir et formuler des phrases.","Nomment les moments et décrivent les activités.","Employer les repères temporels étudiés."],
     ["Objectivation et réinvestissement","Demander de raconter une journée en utilisant les mots étudiés.","Racontent une courte succession d'activités.","Réinvestir les repères dans une situation personnelle."]
    ], trace:"Dans la journée, on distingue notamment le matin, le midi et le soir. Certaines activités se déroulent à des moments habituels.", exercise:"1. Classe les images du matin, du midi et du soir.__EXERCISE_NL__2. Cite une activité du matin.__EXERCISE_NL__3. Raconte une activité du soir.", correction:"Les images sont classées selon le moment représenté ; accepter les variations d'habitudes familiales lorsqu'elles sont cohérentes."
+  },
+  "Comparer des longueurs : plus long et plus court":{
+   objective:"Ordonner plusieurs objets selon leur longueur et utiliser les expressions plus long que et plus court que.",
+   prerequisite:"Comparer directement deux objets en les alignant au même point de départ.",
+   material:"Bandes de papier, ficelles, bâtons, crayons et bandes de longueurs variées.",
+   situation:"La classe doit choisir des bandes pour décorer un panneau. Les apprenants doivent identifier la plus longue, la plus courte et organiser les autres.",
+   stages:[
+    ["Introduction","Présenter trois bandes de longueurs différentes et demander comment les comparer.","Observent, proposent un classement et expliquent leurs premières idées.","Comprendre qu'il faut comparer les longueurs selon une même origine."],
+    ["Manipulation concrète","Faire aligner les bandes au même point de départ et comparer leurs extrémités deux à deux.","Alignent, déplacent et rapprochent les bandes pour les comparer.","Identifier la bande plus longue ou plus courte."],
+    ["Représentation","Faire dessiner les bandes dans l'ordre, de la plus courte à la plus longue.","Dessinent les bandes et vérifient leur ordre avec le matériel.","Représenter un classement de longueurs."],
+    ["Abstraction / verbalisation","Faire employer les expressions plus long que, plus court que et aussi long que si nécessaire.","Formulent des comparaisons en phrases simples.","Employer correctement le vocabulaire comparatif."],
+    ["Objectivation et réinvestissement","Distribuer de nouvelles bandes et demander un classement autonome.","Classent les bandes et justifient leur démarche.","Réinvestir la comparaison et l'ordonnancement des longueurs."]
+   ], trace:"Pour comparer plusieurs longueurs, je place les objets au même point de départ. Je peux les ranger du plus court au plus long ou du plus long au plus court.", exercise:"1. Compare trois bandes en les alignant.__EXERCISE_NL__2. Montre la plus longue et la plus courte.__EXERCISE_NL__3. Range quatre objets du plus court au plus long.", correction:"Les objets doivent être alignés à la même origine. Le classement est vérifié en comparant les extrémités."
+  },
+  "Comparer des contenances : plus et moins":{
+   objective:"Comparer directement la quantité de liquide contenue dans deux récipients et employer plus que, moins que ou autant que.",
+   prerequisite:"Distinguer un récipient plein et un récipient vide ; observer des niveaux de liquide.",
+   material:"Gobelets transparents identiques, bouteilles, eau, bassine et entonnoir.",
+   situation:"Deux récipients transparents contiennent des quantités d'eau différentes. Les apprenants cherchent lequel contient plus ou moins d'eau.",
+   stages:[
+    ["Introduction","Présenter deux récipients et demander lequel contient davantage d'eau.","Observent les niveaux et émettent des hypothèses.","Identifier la quantité contenue comme objet de comparaison."],
+    ["Manipulation concrète","Faire transvaser le contenu de chaque récipient dans des gobelets identiques ou utiliser un récipient mesureur simple.","Transvasent avec soin et observent les niveaux obtenus.","Comparer les contenances sans se fier uniquement à la hauteur du récipient."],
+    ["Représentation","Faire dessiner les récipients et représenter les niveaux d'eau observés.","Dessinent les récipients et leurs niveaux.","Représenter la comparaison des quantités."],
+    ["Abstraction / verbalisation","Faire formuler plus d'eau que, moins d'eau que ou autant d'eau que selon l'expérience.","Décrivent les résultats avec les expressions appropriées.","Employer le vocabulaire de comparaison des contenances."],
+    ["Objectivation et réinvestissement","Proposer une nouvelle paire de récipients et demander une comparaison justifiée.","Comparent et expliquent comment ils ont vérifié.","Réinvestir la comparaison par transvasement."]
+   ], trace:"Pour savoir quel récipient contient plus ou moins, je peux transvaser le contenu dans des récipients identiques et comparer les niveaux.", exercise:"1. Compare deux récipients contenant de l'eau.__EXERCISE_NL__2. Vérifie par transvasement lequel contient le plus.__EXERCISE_NL__3. Emploie plus que et moins que dans deux phrases.", correction:"La comparaison doit porter sur la quantité de liquide. Utiliser des récipients identiques pour rendre le résultat visible."
+  },
+  "Se repérer dans la journée et la semaine":{
+   objective:"Ordonner quelques moments familiers de la journée et reconnaître les jours de la semaine selon les repères travaillés en classe.",
+   prerequisite:"Nommer matin, midi et soir et raconter des activités quotidiennes.",
+   material:"Images d'activités, calendrier hebdomadaire illustré, étiquettes des jours et frise.",
+   situation:"Les apprenants préparent un calendrier illustré des activités de la classe et cherchent à placer chaque activité au bon moment.",
+   stages:[
+    ["Introduction","Faire raconter les activités habituelles d'une journée et demander ce qui revient chaque semaine.","Évoquent leurs activités et écoutent les propositions des camarades.","Mobiliser les repères temporels familiers."],
+    ["Manipulation concrète","Faire remettre en ordre des images de la journée puis manipuler les étiquettes des jours sur un calendrier illustré.","Classent les images et replacent les étiquettes avec l'aide de l'enseignant.","Ordonner des moments et repérer les jours."],
+    ["Représentation","Construire une frise de la journée et un calendrier hebdomadaire illustré.","Dessinent ou collent les images et les étiquettes dans l'ordre.","Représenter une succession temporelle."],
+    ["Abstraction / verbalisation","Faire nommer les moments de la journée et les jours déjà appris ; faire utiliser aujourd'hui, hier et demain si ces mots sont abordés.","Nomment les repères et formulent des phrases simples.","Utiliser le vocabulaire temporel travaillé."],
+    ["Objectivation et réinvestissement","Demander de situer une activité de classe dans la journée et dans la semaine.","Indiquent le moment ou le jour correspondant.","Réinvestir les repères dans la vie de la classe."]
+   ], trace:"La journée comporte différents moments. La semaine est organisée en jours qui se suivent dans un ordre régulier.", exercise:"1. Range les images du matin, du midi et du soir.__EXERCISE_NL__2. Retrouve le jour indiqué par l'enseignant sur le calendrier.__EXERCISE_NL__3. Place une activité de la classe sur le calendrier de la semaine.", correction:"Vérifier l'ordre des moments et l'identification des jours selon le calendrier utilisé dans la classe. Adapter les jours mémorisés à la progression."
+  },
+  "Comparer des durées par observation":{
+   objective:"Comparer des durées d'activités familières en observant leur déroulement et utiliser plus longtemps et moins longtemps.",
+   prerequisite:"Observer une succession d'actions et comparer des situations simples.",
+   material:"Images séquentielles, sablier si disponible, chansons courtes et activités familières.",
+   situation:"Deux activités de classe sont proposées : réciter une courte comptine et ranger le matériel. Les apprenants cherchent laquelle prend le plus de temps.",
+   stages:[
+    ["Introduction","Présenter deux activités familières et demander laquelle semble durer le plus longtemps.","Émettent des hypothèses et expliquent leurs impressions.","Comprendre que les activités peuvent avoir des durées différentes."],
+    ["Manipulation / observation","Faire réaliser ou observer les activités l'une après l'autre, avec un repère commun comme une comptine ou un sablier si disponible.","Observent le déroulement et repèrent l'activité qui se prolonge davantage.","Comparer des durées par une expérience simple."],
+    ["Représentation","Faire classer des images d'activités selon leur durée observée : courte ou longue.","Classent et expliquent leur classement.","Représenter une comparaison de durées."],
+    ["Abstraction / verbalisation","Introduire les expressions plus longtemps, moins longtemps et presque le même temps selon les observations.","Formulent des phrases adaptées aux situations observées.","Employer un vocabulaire simple de durée."],
+    ["Objectivation et réinvestissement","Faire comparer deux nouvelles activités et demander une justification fondée sur l'observation.","Comparent et justifient leur réponse.","Réinvestir la comparaison de durées."]
+   ], trace:"Une durée est le temps pendant lequel une activité se déroule. On peut comparer deux activités en observant laquelle dure plus longtemps ou moins longtemps.", exercise:"1. Compare la durée de deux petites activités de classe.__EXERCISE_NL__2. Indique celle qui dure le moins longtemps.__EXERCISE_NL__3. Utilise plus longtemps et moins longtemps dans deux phrases.", correction:"La réponse doit s'appuyer sur l'observation réalisée. Ne pas exiger de mesure en minutes ou en secondes si ces unités ne sont pas encore étudiées."
+  },
+  "Utiliser des unités non conventionnelles pour mesurer":{
+   objective:"Mesurer ou comparer une longueur à l'aide d'une unité choisie et répétée régulièrement, comme une bande, une corde ou des pas adaptés.",
+   prerequisite:"Comparer des longueurs et aligner des objets à une même origine.",
+   material:"Bandes de papier identiques, ficelles, bâtonnets de même taille, objets de la classe et feuilles.",
+   situation:"La classe veut connaître la longueur d'une table sans utiliser de règle graduée. Les apprenants cherchent une manière de la mesurer avec le matériel disponible.",
+   stages:[
+    ["Introduction","Présenter la table et demander comment comparer ou mesurer sa longueur sans règle graduée.","Proposent des idées et choisissent une unité simple.","Comprendre le besoin d'une unité répétée."],
+    ["Manipulation concrète","Faire reporter plusieurs fois une même bande ou un même bâtonnet le long de la table, sans espace ni chevauchement.","Posent l'unité successivement et comptent les reports.","Mesurer avec une unité constante."],
+    ["Représentation","Faire dessiner la table et représenter les unités placées bout à bout.","Dessinent les reports et notent le nombre d'unités utilisées avec les nombres connus.","Représenter une mesure par répétition d'une unité."],
+    ["Abstraction / verbalisation","Faire exprimer le résultat sous la forme : la table mesure tant de bandes ou de bâtonnets.","Annoncent le nombre d'unités et expliquent la procédure.","Comprendre qu'une mesure dépend de l'unité choisie."],
+    ["Objectivation et réinvestissement","Faire mesurer un autre objet avec la même unité, puis comparer les résultats obtenus avec une autre unité.","Mesurent, comparent et constatent que le résultat numérique change si l'unité change.","Réinvestir une procédure de mesure non conventionnelle."]
+   ], trace:"Pour mesurer avec une unité non conventionnelle, je reporte plusieurs fois la même unité, sans laisser d'espace ni faire de chevauchement. Je compte les reports.", exercise:"1. Mesure la longueur d'un cahier avec des bâtonnets identiques.__EXERCISE_NL__2. Mesure la largeur d'une table avec la même unité.__EXERCISE_NL__3. Explique pourquoi il faut utiliser toujours la même unité.", correction:"Les reports doivent être alignés, sans espace ni chevauchement. Le résultat est exprimé en nombre d'unités choisies, sans imposer une unité officielle."
+  },
+  "Découvrir des situations simples d'échange et de monnaie":{
+   objective:"Reconnaître des pièces ou billets utilisés dans des situations familières et réaliser de petits échanges simulés adaptés aux acquis des apprenants.",
+   prerequisite:"Dénombrer de petites quantités et comparer des collections.",
+   material:"Monnaie factice ou images de pièces et billets, objets de la classe étiquetés avec des prix fictifs simples, paniers.",
+   situation:"La classe organise un petit marché simulé. Les apprenants choisissent un objet et remettent la monnaie factice demandée dans le jeu.",
+   stages:[
+    ["Introduction","Présenter un marché illustré et demander comment obtenir un objet en échange de monnaie.","Observent, racontent des expériences familières et identifient l'échange.","Comprendre l'idée d'un échange dans une situation de marché."],
+    ["Manipulation concrète","Distribuer de la monnaie factice et faire jouer vendeur et acheteur avec des valeurs simples choisies selon les acquis.","Comptent les pièces ou billets factices et réalisent les échanges simulés.","Associer une somme représentée à un échange simple."],
+    ["Représentation","Faire dessiner l'objet, la monnaie remise et l'échange effectué.","Dessinent les éléments de la situation et les associent.","Représenter un échange par des images."],
+    ["Abstraction / verbalisation","Faire nommer les pièces ou billets présentés et verbaliser la somme remise, sans introduire de calcul non étudié.","Nomment les éléments et expliquent l'échange réalisé.","Utiliser le vocabulaire de la monnaie dans un contexte concret."],
+    ["Objectivation et réinvestissement","Organiser un nouveau petit marché avec d'autres objets et des valeurs adaptées à la progression.","Jouent les rôles et réalisent les échanges demandés.","Réinvestir la reconnaissance de la monnaie et le dénombrement."]
+   ], trace:"Dans un échange, on peut donner de la monnaie pour obtenir un objet. On apprend à reconnaître et à compter les pièces ou billets utilisés dans le jeu.", exercise:"1. Reconnais les pièces ou billets factices présentés.__EXERCISE_NL__2. Dans le marché de la classe, remets la somme demandée avec la monnaie factice.__EXERCISE_NL__3. Explique ce que fait l'acheteur et ce que fait le vendeur.", correction:"Évaluer la reconnaissance des valeurs présentées et le dénombrement. Utiliser uniquement des valeurs et situations adaptées à la progression ; activité de simulation, sans argent réel."
   }
  }
 };
