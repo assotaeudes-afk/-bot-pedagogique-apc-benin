@@ -207,7 +207,7 @@ const FR_CI = {
    ["Évaluation et remédiation","Faire reconnaître et écrire A individuellement. Corriger les difficultés observées.","Identifient et écrivent A individuellement.","Reconnaître et écrire A sous les formes étudiées."]
   ],
   trace:"La lettre A est une lettre de l'alphabet. On apprend à la reconnaître, à prononcer son son et à l'écrire sous ses différentes formes.",
-  exercise:"1. Entoure la lettre A parmi plusieurs lettres proposées.\n2. Prononce le son étudié.\n3. Trace la lettre A dans l'air puis sur ton ardoise.",
+  exercise:"1. Entoure la lettre A parmi plusieurs lettres proposées.__EXERCISE_NL__2. Prononce le son étudié.__EXERCISE_NL__3. Trace la lettre A dans l'air puis sur ton ardoise.",
   correction:"L'apprenant doit identifier uniquement la lettre A et reproduire un tracé reconnaissable.",
   caution:"Pour cette première leçon sur la lettre-son A, le guide indique de ne pas former de syllabes, de mots ou de phrases à ce stade."
  },
@@ -225,7 +225,7 @@ const FR_CI = {
    ["Évaluation","Faire lire et écrire individuellement ; reprendre les erreurs.","Lis­ent et écrivent individuellement.","Montrer la maîtrise des objectifs de la séance."]
   ],
   trace:"La lettre L se reconnaît à sa forme et au son qu'elle représente. Elle peut être utilisée avec les lettres déjà étudiées pour former des syllabes et des mots simples.",
-  exercise:"1. Entoure la lettre L.\n2. Écris L plusieurs fois.\n3. Lis les syllabes et mots construits en classe avec les lettres déjà étudiées.",
+  exercise:"1. Entoure la lettre L.__EXERCISE_NL__2. Écris L plusieurs fois.__EXERCISE_NL__3. Lis les syllabes et mots construits en classe avec les lettres déjà étudiées.",
   correction:"Vérifier la reconnaissance, la prononciation, le tracé et la lecture des éléments effectivement construits pendant la séance."
  },
  "Leçon 3 : Apprentissage de la lettre-son T":{
@@ -242,7 +242,7 @@ const FR_CI = {
    ["Évaluation et remédiation","Évaluer reconnaissance, prononciation, écriture et lecture ; reprendre les difficultés.","Réalisent les tâches individuellement.","Atteindre les objectifs annoncés."]
   ],
   trace:"La lettre T représente un son que l'on apprend à reconnaître, à prononcer et à écrire. Avec les lettres déjà étudiées, elle permet de lire des syllabes, des mots et de courtes phrases.",
-  exercise:"1. Repère la lettre T.\n2. Écris T.\n3. Lis les syllabes, mots et phrases construits en classe avec les lettres connues.",
+  exercise:"1. Repère la lettre T.__EXERCISE_NL__2. Écris T.__EXERCISE_NL__3. Lis les syllabes, mots et phrases construits en classe avec les lettres connues.",
   correction:"La correction porte sur l'identification, la prononciation, le tracé et la lecture des éléments travaillés."
  },
  "Leçon 4 : Apprentissage de la lettre-son O":{
@@ -259,7 +259,7 @@ const FR_CI = {
    ["Évaluation","Faire reconnaître, lire et écrire les éléments travaillés.","Réalisent les exercices individuellement.","Montrer les acquis et identifier les difficultés."]
   ],
   trace:"La lettre O se reconnaît à sa forme et au son étudié. Elle s'associe aux lettres déjà apprises pour former des syllabes et des mots simples.",
-  exercise:"1. Entoure O.\n2. Écris O.\n3. Lis les syllabes et les mots étudiés en classe.",
+  exercise:"1. Entoure O.__EXERCISE_NL__2. Écris O.__EXERCISE_NL__3. Lis les syllabes et les mots étudiés en classe.",
   correction:"Vérifier la reconnaissance de O, son écriture et la lecture des combinaisons effectivement étudiées."
  },
  "Leçon 5 : Apprentissage de la lettre-son P":{
@@ -276,7 +276,7 @@ const FR_CI = {
    ["Évaluation et remédiation","Faire réaliser une tâche individuelle puis corriger les difficultés.","Lis­ent, identifient et écrivent individuellement.","Atteindre les objectifs annoncés."]
   ],
   trace:"La lettre P représente un son. On apprend à la reconnaître, à la prononcer et à l'écrire. Elle permet de former des syllabes et des mots avec les lettres déjà étudiées.",
-  exercise:"1. Repère P parmi d'autres lettres.\n2. Écris P.\n3. Lis les syllabes et mots construits avec les lettres connues.",
+  exercise:"1. Repère P parmi d'autres lettres.__EXERCISE_NL__2. Écris P.__EXERCISE_NL__3. Lis les syllabes et mots construits avec les lettres connues.",
   correction:"Vérifier la reconnaissance, la prononciation, l'écriture et la lecture des éléments étudiés."
  }
 };
@@ -294,7 +294,7 @@ const MATH_CI = {
     ["Représentation","Faire représenter la collection par des dessins ou des marques, puis comparer les représentations.","Dessinent ou font des marques correspondant aux objets.","Faire correspondre chaque objet à une représentation."],
     ["Abstraction / symbolisation","Associer la quantité obtenue à la représentation chiffrée correspondante, uniquement dans la plage de nombres déjà étudiée.","Associent la collection, le dessin et le nombre présenté.","Relier quantité, représentation et écriture chiffrée connue."],
     ["Objectivation et réinvestissement","Faire expliquer la méthode puis proposer une nouvelle collection à dénombrer.","Expliquent leur démarche et dénombrent une nouvelle collection.","Dénombrer de façon organisée et expliquer comment faire."]
-   ], trace:"Pour dénombrer une collection, je compte chaque objet une seule fois. Je peux déplacer ou pointer les objets déjà comptés.", exercise:"1. Dénombre les objets d'une collection préparée par le maître.\n2. Prépare une collection qui contient autant d'objets que le modèle.\n3. Représente la collection par des dessins.", correction:"La réponse correspond au nombre réel d'objets. Chaque objet doit être compté une seule fois. Adapter les quantités aux nombres déjà étudiés."
+   ], trace:"Pour dénombrer une collection, je compte chaque objet une seule fois. Je peux déplacer ou pointer les objets déjà comptés.", exercise:"1. Dénombre les objets d'une collection préparée par le maître.__EXERCISE_NL__2. Prépare une collection qui contient autant d'objets que le modèle.__EXERCISE_NL__3. Représente la collection par des dessins.", correction:"La réponse correspond au nombre réel d'objets. Chaque objet doit être compté une seule fois. Adapter les quantités aux nombres déjà étudiés."
   },
   "Comparer des collections : autant, plus, moins":{
    objective:"Comparer deux collections par correspondance terme à terme et employer autant que, plus que ou moins que.", prerequisite:"Constituer et dénombrer de petites collections.", material:"Bouchons, graines, jetons, images et deux plateaux.",
@@ -305,7 +305,7 @@ const MATH_CI = {
     ["Représentation","Faire dessiner les deux collections et les associations réalisées.","Dessinent et relient les éléments correspondants.","Représenter la comparaison terme à terme."],
     ["Abstraction / symbolisation","Introduire oralement les expressions autant que, plus que et moins que à partir des manipulations.","Formulent la comparaison avec les mots appropriés.","Employer correctement les mots de comparaison."],
     ["Objectivation et réinvestissement","Proposer de nouvelles collections et demander une justification.","Comparent et expliquent leur réponse.","Comparer deux collections et justifier le résultat."]
-   ], trace:"Deux collections ont autant d'objets si chaque objet de l'une peut être associé à un objet de l'autre sans reste. Une collection peut avoir plus ou moins d'objets.", exercise:"1. Compare deux collections avec des objets.\n2. Dis laquelle en a le plus ou le moins.\n3. Trouve deux collections qui ont autant d'objets.", correction:"Vérifier la correspondance terme à terme et l'emploi correct de autant que, plus que ou moins que."
+   ], trace:"Deux collections ont autant d'objets si chaque objet de l'une peut être associé à un objet de l'autre sans reste. Une collection peut avoir plus ou moins d'objets.", exercise:"1. Compare deux collections avec des objets.__EXERCISE_NL__2. Dis laquelle en a le plus ou le moins.__EXERCISE_NL__3. Trouve deux collections qui ont autant d'objets.", correction:"Vérifier la correspondance terme à terme et l'emploi correct de autant que, plus que ou moins que."
   },
   "Additionner par manipulation":{
    objective:"Réunir deux petites collections et déterminer la quantité totale par manipulation.", prerequisite:"Dénombrer de petites collections et comprendre l'idée de réunion.", material:"Graines, jetons, bouchons, dessins et cartes-nombres étudiées.",
@@ -316,7 +316,7 @@ const MATH_CI = {
     ["Représentation","Faire dessiner les deux groupes puis la collection réunie.","Représentent les deux quantités et leur réunion.","Passer des objets à un dessin organisé."],
     ["Abstraction / symbolisation","Présenter le signe + et une écriture additive seulement avec les nombres déjà étudiés.","Associent l'action de réunir à l'écriture proposée.","Comprendre le sens de l'addition comme réunion."],
     ["Objectivation et réinvestissement","Faire expliquer la démarche et proposer une autre situation concrète.","Expliquent et résolvent une nouvelle situation.","Réinvestir l'addition dans un problème simple."]
-   ], trace:"Additionner, c'est réunir des quantités pour trouver le total. On peut d'abord réunir les objets, puis les compter.", exercise:"1. Réunis deux petites collections.\n2. Compte tous les objets.\n3. Représente la situation par un dessin et, si cela a été étudié, par une écriture avec le signe +.", correction:"Le total doit correspondre au dénombrement de la collection réunie. Utiliser uniquement les nombres et écritures déjà étudiés."
+   ], trace:"Additionner, c'est réunir des quantités pour trouver le total. On peut d'abord réunir les objets, puis les compter.", exercise:"1. Réunis deux petites collections.__EXERCISE_NL__2. Compte tous les objets.__EXERCISE_NL__3. Représente la situation par un dessin et, si cela a été étudié, par une écriture avec le signe +.", correction:"Le total doit correspondre au dénombrement de la collection réunie. Utiliser uniquement les nombres et écritures déjà étudiés."
   },
   "Soustraire par manipulation":{
    objective:"Retirer une partie d'une collection et déterminer la quantité qui reste.", prerequisite:"Dénombrer une collection et comprendre l'action de retirer.", material:"Jetons, graines, bouchons, cartes-images et ardoises.",
@@ -327,7 +327,7 @@ const MATH_CI = {
     ["Représentation","Faire dessiner la collection initiale, barrer les objets retirés et compter ceux qui restent.","Dessinent, barrent et comptent les objets restants.","Représenter l'action de retirer."],
     ["Abstraction / symbolisation","Relier l'action au signe − et à une écriture adaptée si cette symbolisation figure dans les acquis de la classe.","Associent la manipulation à la représentation symbolique proposée.","Comprendre le sens de la soustraction."],
     ["Objectivation et réinvestissement","Faire raconter la démarche et proposer un nouveau problème de retrait.","Expliquent puis résolvent une nouvelle situation.","Réinvestir l'idée de reste."]
-   ], trace:"Soustraire, c'est retirer une quantité d'une collection et chercher ce qui reste.", exercise:"1. Prépare une collection.\n2. Retire quelques objets.\n3. Compte les objets restants et représente la situation.", correction:"Le nombre annoncé doit être celui des objets restant après le retrait. Adapter les quantités aux acquis du CI."
+   ], trace:"Soustraire, c'est retirer une quantité d'une collection et chercher ce qui reste.", exercise:"1. Prépare une collection.__EXERCISE_NL__2. Retire quelques objets.__EXERCISE_NL__3. Compte les objets restants et représente la situation.", correction:"Le nombre annoncé doit être celui des objets restant après le retrait. Adapter les quantités aux acquis du CI."
   },
   "Associer une quantité à une représentation":{
    objective:"Associer une petite collection d'objets à une représentation figurée ou chiffrée déjà étudiée.",
@@ -342,7 +342,7 @@ const MATH_CI = {
     ["Objectivation et réinvestissement","Proposer de nouvelles associations sans modèle immédiat.","Choisissent une représentation et expliquent leur choix.","Réinvestir l'association quantité-représentation de manière autonome."]
    ],
    trace:"Une quantité peut être représentée par des objets, des dessins, des points ou un chiffre déjà appris. Ces représentations correspondent à la même quantité.",
-   exercise:"1. Compte les objets et relie-les à la carte à points correspondante.\n2. Dessine une collection qui correspond à la carte proposée.\n3. Associe la collection au chiffre étudié.",
+   exercise:"1. Compte les objets et relie-les à la carte à points correspondante.__EXERCISE_NL__2. Dessine une collection qui correspond à la carte proposée.__EXERCISE_NL__3. Associe la collection au chiffre étudié.",
    correction:"Chaque collection doit être reliée à une représentation de même quantité. N'utiliser que les chiffres déjà abordés dans la progression."
   },
   "Reconnaître et construire les nombres étudiés":{
@@ -358,7 +358,7 @@ const MATH_CI = {
     ["Objectivation et réinvestissement","Distribuer d'autres cartes-nombres connues et demander de construire les collections correspondantes.","Construisent et vérifient individuellement leurs collections.","Reconnaître et construire les nombres de la progression."]
    ],
    trace:"Pour construire un nombre, je prépare une collection qui contient exactement la quantité demandée. Je peux vérifier en comptant les objets un à un.",
-   exercise:"1. Construis une collection correspondant à une carte-nombre connue.\n2. Dessine cette collection.\n3. Relie le dessin à la carte-nombre correspondante.",
+   exercise:"1. Construis une collection correspondant à une carte-nombre connue.__EXERCISE_NL__2. Dessine cette collection.__EXERCISE_NL__3. Relie le dessin à la carte-nombre correspondante.",
    correction:"La collection doit contenir exactement le nombre d'éléments demandé. Adapter les cartes aux nombres déjà enseignés."
   },
   "Lire et écrire les nombres étudiés":{
@@ -374,7 +374,7 @@ const MATH_CI = {
     ["Objectivation et évaluation","Dicter quelques nombres étudiés et faire associer lecture, écriture et quantité.","Lis­ent, écrivent et associent individuellement les nombres.","Montrer la maîtrise de la lecture et de l'écriture des nombres abordés."]
    ],
    trace:"Un nombre peut être lu et écrit. Son écriture chiffrée représente une quantité. Je m'entraîne à lire et à tracer les nombres étudiés en respectant leur forme.",
-   exercise:"1. Lis les nombres présentés par le maître.\n2. Écris sur ton ardoise les nombres dictés.\n3. Relie chaque nombre à la collection correspondante.",
+   exercise:"1. Lis les nombres présentés par le maître.__EXERCISE_NL__2. Écris sur ton ardoise les nombres dictés.__EXERCISE_NL__3. Relie chaque nombre à la collection correspondante.",
    correction:"Vérifier la lecture, le sens des chiffres et leur tracé. N'évaluer que les nombres effectivement enseignés."
   },
   "Ranger et comparer des nombres":{
@@ -390,7 +390,7 @@ const MATH_CI = {
     ["Objectivation et réinvestissement","Proposer une nouvelle série de nombres à comparer et à ranger.","Rangent les nombres et vérifient leur travail.","Réinvestir la comparaison et le rangement des nombres connus."]
    ],
    trace:"Comparer des nombres permet de dire lequel est plus grand ou plus petit. Ranger des nombres, c'est les placer dans un ordre demandé.",
-   exercise:"1. Compare deux nombres connus à partir de leurs collections.\n2. Range trois cartes-nombres du plus petit au plus grand.\n3. Range-les du plus grand au plus petit.",
+   exercise:"1. Compare deux nombres connus à partir de leurs collections.__EXERCISE_NL__2. Range trois cartes-nombres du plus petit au plus grand.__EXERCISE_NL__3. Range-les du plus grand au plus petit.",
    correction:"L'ordre doit respecter la valeur des nombres. Limiter les séries aux nombres étudiés et utiliser la manipulation si nécessaire."
   },
   "Décomposer et recomposer des nombres":{
@@ -406,7 +406,7 @@ const MATH_CI = {
     ["Objectivation et réinvestissement","Proposer une nouvelle collection à partager de plusieurs façons.","Effectuent une décomposition et vérifient en recomposant.","Réinvestir la décomposition et la recomposition des quantités connues."]
    ],
    trace:"Décomposer, c'est partager une quantité en plusieurs parties. Recomposer, c'est réunir les parties pour retrouver la quantité de départ.",
-   exercise:"1. Partage une collection de jetons en deux groupes.\n2. Compte les objets de chaque groupe.\n3. Réunis les groupes et vérifie que tu retrouves la collection de départ.",
+   exercise:"1. Partage une collection de jetons en deux groupes.__EXERCISE_NL__2. Compte les objets de chaque groupe.__EXERCISE_NL__3. Réunis les groupes et vérifie que tu retrouves la collection de départ.",
    correction:"La somme des parties doit correspondre à la collection initiale. Accepter plusieurs répartitions exactes et adaptées aux nombres étudiés."
   },
   "Résoudre de petits problèmes additifs":{
@@ -422,7 +422,7 @@ const MATH_CI = {
     ["Évaluation et réinvestissement","Proposer un problème analogue avec d'autres objets et des nombres connus.","Résolvent individuellement le nouveau problème.","Réutiliser la démarche dans une situation nouvelle."]
    ],
    trace:"Pour résoudre un problème, j'écoute ou je lis l'énoncé, je cherche ce que l'on me demande, je représente la situation, je trouve la réponse et je vérifie.",
-   exercise:"1. Maman a 2 mangues et en reçoit 1 autre. Combien a-t-elle de mangues ?\n2. Représente le problème avec des dessins ou des jetons.\n3. Explique comment tu as trouvé la réponse.",
+   exercise:"1. Maman a 2 mangues et en reçoit 1 autre. Combien a-t-elle de mangues ?__EXERCISE_NL__2. Représente le problème avec des dessins ou des jetons.__EXERCISE_NL__3. Explique comment tu as trouvé la réponse.",
    correction:"Exemple : 2 mangues réunies avec 1 mangue donnent 3 mangues. Accepter une résolution par manipulation, dessin ou écriture additive si celle-ci a déjà été enseignée. Adapter les nombres au niveau réel de la classe."
   }
  },
@@ -436,7 +436,7 @@ const MATH_CI = {
     ["Représentation","Présenter ou faire dessiner des scènes montrant les deux positions.","Dessinent ou désignent les positions sur des images.","Associer les mots aux représentations."],
     ["Abstraction / verbalisation","Faire formuler des phrases décrivant la position.","Disent où se trouve l'objet en utilisant devant ou derrière.","Employer les termes spatiaux de façon correcte."],
     ["Objectivation et réinvestissement","Donner de nouvelles consignes de placement dans la classe.","Plaçent et décrivent les objets.","Réutiliser les notions dans un nouvel espace."]
-   ], trace:"Devant et derrière indiquent la position d'un objet ou d'une personne par rapport à un repère.", exercise:"1. Place un objet devant ta chaise.\n2. Place un objet derrière ta chaise.\n3. Décris la position d'un objet dans une image.", correction:"L'objet doit être placé conformément au repère indiqué. La réponse orale doit utiliser le terme demandé."
+   ], trace:"Devant et derrière indiquent la position d'un objet ou d'une personne par rapport à un repère.", exercise:"1. Place un objet devant ta chaise.__EXERCISE_NL__2. Place un objet derrière ta chaise.__EXERCISE_NL__3. Décris la position d'un objet dans une image.", correction:"L'objet doit être placé conformément au repère indiqué. La réponse orale doit utiliser le terme demandé."
   },
   "Reconnaître et reproduire un cercle":{
    objective:"Reconnaître un cercle parmi des formes proposées et en reproduire un avec un matériel adapté.", prerequisite:"Observer et comparer des formes simples.", material:"Objets ronds, couvercles, formes découpées, feuilles, crayons et gabarits.",
@@ -447,7 +447,7 @@ const MATH_CI = {
     ["Représentation","Faire reproduire un cercle en utilisant un gabarit ou un objet circulaire.","Tracent le contour et colorient ou reproduisent la forme.","Reproduire une forme circulaire reconnaissable."],
     ["Abstraction / verbalisation","Nommer la forme et la distinguer des autres formes présentées.","Désignent le cercle et le distinguent des autres formes.","Reconnaître et nommer le cercle."],
     ["Objectivation et réinvestissement","Faire rechercher dans la classe des objets ayant une forme circulaire.","Identifient et nomment des objets ronds.","Réinvestir la reconnaissance du cercle dans l'environnement."]
-   ], trace:"Le cercle est une forme ronde. On peut reconnaître sa forme sur des objets et la reproduire à l'aide d'un gabarit.", exercise:"1. Entoure les formes qui sont des cercles.\n2. Reproduis un cercle avec un gabarit.\n3. Cite un objet de forme ronde.", correction:"Retenir les formes circulaires et vérifier que la reproduction est fermée et reconnaissable."
+   ], trace:"Le cercle est une forme ronde. On peut reconnaître sa forme sur des objets et la reproduire à l'aide d'un gabarit.", exercise:"1. Entoure les formes qui sont des cercles.__EXERCISE_NL__2. Reproduis un cercle avec un gabarit.__EXERCISE_NL__3. Cite un objet de forme ronde.", correction:"Retenir les formes circulaires et vérifier que la reproduction est fermée et reconnaissable."
   },
   "Reconnaître et reproduire un carré":{
    objective:"Reconnaître un carré parmi des formes simples et en reproduire un à l'aide d'un modèle ou d'un gabarit.", prerequisite:"Observer, manipuler et comparer des formes.", material:"Formes découpées, carrés en carton, bâtonnets, feuilles et gabarits.",
@@ -458,7 +458,7 @@ const MATH_CI = {
     ["Représentation","Faire reproduire la forme par assemblage de bâtonnets ou à l'aide d'un gabarit.","Assemblent ou tracent un carré.","Reproduire une forme reconnaissable."],
     ["Abstraction / verbalisation","Faire nommer le carré et le distinguer des autres formes.","Désignent et nomment le carré.","Associer le nom à la forme."],
     ["Objectivation et réinvestissement","Faire rechercher des objets de forme carrée dans l'environnement.","Repèrent et décrivent des objets.","Réinvestir la reconnaissance du carré."]
-   ], trace:"Le carré est une forme géométrique que l'on peut reconnaître, classer et reproduire à partir d'un modèle.", exercise:"1. Entoure les carrés parmi les formes proposées.\n2. Reproduis un carré avec un gabarit ou des bâtonnets.\n3. Recherche un objet de forme carrée.", correction:"L'apprenant doit identifier le carré et produire une forme correspondant au modèle."
+   ], trace:"Le carré est une forme géométrique que l'on peut reconnaître, classer et reproduire à partir d'un modèle.", exercise:"1. Entoure les carrés parmi les formes proposées.__EXERCISE_NL__2. Reproduis un carré avec un gabarit ou des bâtonnets.__EXERCISE_NL__3. Recherche un objet de forme carrée.", correction:"L'apprenant doit identifier le carré et produire une forme correspondant au modèle."
   },
   "Reconnaître et reproduire un triangle":{
    objective:"Reconnaître un triangle parmi des formes proposées et en reproduire un à partir d'un modèle.", prerequisite:"Observer et comparer des formes simples.", material:"Triangles en carton, autres formes découpées, bâtonnets, feuilles et crayons.",
@@ -469,7 +469,63 @@ const MATH_CI = {
     ["Représentation","Faire construire ou reproduire un triangle avec des bâtonnets ou un gabarit.","Assemblent les bâtonnets ou tracent la forme.","Reproduire un triangle reconnaissable."],
     ["Abstraction / verbalisation","Faire nommer le triangle et le distinguer des autres formes.","Nomment et montrent le triangle.","Associer le nom à la forme étudiée."],
     ["Objectivation et réinvestissement","Proposer un nouveau tri et une recherche d'objets ou motifs triangulaires.","Identifient les triangles dans de nouveaux supports.","Réinvestir la reconnaissance du triangle."]
-   ], trace:"Le triangle est une forme géométrique que l'on apprend à reconnaître, à nommer et à reproduire.", exercise:"1. Montre les triangles parmi plusieurs formes.\n2. Reproduis un triangle avec des bâtonnets.\n3. Dessine un triangle.", correction:"La forme produite doit être fermée et présenter trois côtés."
+   ], trace:"Le triangle est une forme géométrique que l'on apprend à reconnaître, à nommer et à reproduire.", exercise:"1. Montre les triangles parmi plusieurs formes.__EXERCISE_NL__2. Reproduis un triangle avec des bâtonnets.__EXERCISE_NL__3. Dessine un triangle.", correction:"La forme produite doit être fermée et présenter trois côtés."
+  }
+ ,
+  "Se repérer dans l'espace : dessus et dessous":{
+   objective:"Situer un objet par rapport à un repère en utilisant correctement dessus et dessous.", prerequisite:"Observer des objets et exécuter des consignes simples de placement.", material:"Table, chaise, boîte, cahiers, jouets et images de situations familières.",
+   situation:"L'enseignant place un cahier sur une table puis un objet sous la table et demande aux apprenants de décrire les positions.",
+   stages:[
+    ["Introduction","Présenter deux objets placés l'un au-dessus ou au-dessous de l'autre et questionner leur position.","Observent et proposent des mots pour décrire les positions.","Repérer la position d'un objet par rapport à un autre."],
+    ["Manipulation concrète","Faire placer successivement un objet dessus puis dessous un support clairement identifié.","Manipulent les objets et exécutent les consignes.","Exécuter correctement les consignes dessus et dessous."],
+    ["Représentation","Présenter des images puis faire dessiner un objet placé dessus ou dessous un autre.","Désignent les positions et réalisent des dessins simples.","Associer chaque mot à une représentation correcte."],
+    ["Abstraction / verbalisation","Faire décrire plusieurs dispositions en utilisant les mots dessus et dessous.","Formulent des phrases complètes avec les mots étudiés.","Employer correctement le vocabulaire spatial."],
+    ["Objectivation et réinvestissement","Proposer de nouvelles situations avec le mobilier et les objets de la classe.","Placent les objets et expliquent leur position.","Réutiliser les repères dans un autre contexte."]
+   ], trace:"Dessus et dessous indiquent la position d'un objet par rapport à un repère. Je peux dire : le livre est sur la table ; le sac est sous la table.", exercise:"1. Place un crayon sur ton cahier.__EXERCISE_NL__2. Place un objet sous ta chaise.__EXERCISE_NL__3. Décris la position de deux objets dans une image.", correction:"L'objet doit être placé conformément au repère. Vérifier l'emploi oral de dessus/sur et dessous/sous selon la consigne."
+  },
+  "Se repérer dans l'espace : entre et à côté":{
+   objective:"Identifier et décrire la position d'un objet ou d'une personne entre deux repères ou à côté d'un repère.", prerequisite:"Repérer des positions simples dans l'espace et suivre une consigne.", material:"Élèves, chaises, boîtes, jouets et images de scènes.",
+   situation:"L'enseignant place un objet entre deux boîtes puis un autre à côté d'une boîte et demande de décrire chaque position.",
+   stages:[
+    ["Introduction","Faire observer trois objets alignés puis deux objets voisins et demander de décrire leur disposition.","Observent et proposent des descriptions.","Comprendre les relations spatiales à étudier."],
+    ["Manipulation concrète","Faire placer un objet entre deux autres, puis à côté d'un objet repère.","Déplacent les objets et réalisent les placements demandés.","Réaliser correctement les deux placements."],
+    ["Représentation","Faire observer et compléter des images ou dessins montrant les positions.","Désignent, dessinent ou complètent les dispositions.","Représenter les positions entre et à côté."],
+    ["Abstraction / verbalisation","Faire nommer les repères et construire des phrases décrivant les positions.","Utilisent les mots entre et à côté dans des phrases.","Employer le vocabulaire spatial avec précision."],
+    ["Objectivation et réinvestissement","Donner de nouvelles consignes avec des objets de la classe.","Effectuent les placements et expliquent leur démarche.","Réinvestir les notions dans une situation nouvelle."]
+   ], trace:"Un objet est entre deux autres lorsqu'il se trouve au milieu d'eux. Il est à côté d'un objet lorsqu'il est près de cet objet.", exercise:"1. Place un objet entre deux cahiers.__EXERCISE_NL__2. Place un crayon à côté de ta trousse.__EXERCISE_NL__3. Décris la position d'un élève dans un rang.", correction:"Vérifier que l'objet est situé entre les deux repères demandés ou près du repère désigné."
+  },
+  "Reconnaître et tracer des lignes":{
+   objective:"Observer, reconnaître et tracer des lignes simples à main levée ou à l'aide d'un matériel adapté.", prerequisite:"Tenir correctement un crayon et réaliser des gestes graphiques simples.", material:"Ficelles, bandes, règles, feuilles, crayons, ardoises et tracés modèles.",
+   situation:"L'enseignant montre une ficelle tendue, une ficelle courbée et différents tracés ; les apprenants cherchent à les distinguer et à les reproduire.",
+   stages:[
+    ["Introduction","Présenter des ficelles et des tracés variés ; demander ce qui est semblable ou différent.","Observent, décrivent et comparent les tracés.","Repérer visuellement différentes lignes."],
+    ["Manipulation concrète","Faire tendre, courber et déplacer une ficelle ; faire suivre les tracés avec le doigt.","Manipulent les ficelles et suivent les lignes.","Percevoir le trajet et la forme d'une ligne."],
+    ["Représentation","Faire reproduire des lignes simples sur ardoise ou feuille, d'abord librement puis à partir d'un modèle.","Tracent des lignes et comparent leur production au modèle.","Produire un tracé continu et reconnaissable."],
+    ["Abstraction / verbalisation","Faire décrire les lignes observées avec des mots accessibles : droite, courbe, ouverte ou fermée selon les exemples étudiés.","Nomment et décrivent les tracés.","Associer un vocabulaire simple aux lignes observées."],
+    ["Objectivation et réinvestissement","Proposer un tri de nouveaux tracés et demander d'en reproduire quelques-uns.","Classent et reproduisent les lignes.","Reconnaître et tracer des lignes dans une nouvelle tâche."]
+   ], trace:"Une ligne est un tracé. Elle peut être droite ou courbe. On peut observer des lignes ouvertes ou fermées et apprendre à les reproduire.", exercise:"1. Suis du doigt trois lignes différentes.__EXERCISE_NL__2. Reproduis une ligne droite et une ligne courbe.__EXERCISE_NL__3. Entoure une ligne fermée parmi plusieurs tracés.", correction:"Les tracés doivent être continus et correspondre au modèle demandé. Ne demander que les distinctions effectivement travaillées pendant la séance."
+  },
+  "Classer et assembler des formes géométriques":{
+   objective:"Trier des formes géométriques selon leur apparence puis assembler des formes pour réaliser une composition simple.", prerequisite:"Reconnaître quelques formes usuelles présentées en classe.", material:"Formes découpées en carton ou papier, carrés, triangles, cercles, grandes feuilles et colle si disponible.",
+   situation:"La classe reçoit un ensemble de formes mélangées et doit les regrouper puis les utiliser pour composer une image simple.",
+   stages:[
+    ["Introduction","Présenter un lot de formes mélangées et demander comment les organiser.","Observent les formes et proposent des critères de classement.","Identifier des ressemblances et des différences."],
+    ["Manipulation concrète","Faire trier les formes par ressemblance, puis proposer de les juxtaposer ou de les assembler.","Manipulent, regroupent et assemblent les formes.","Classer et combiner les formes selon une consigne."],
+    ["Représentation","Faire réaliser une composition simple avec les formes classées et la faire reproduire sur une feuille.","Construisent une image ou un motif et le reproduisent.","Passer de la manipulation à une représentation."],
+    ["Abstraction / verbalisation","Faire expliquer le critère de classement et nommer les formes déjà étudiées.","Décrivent les regroupements et nomment les formes connues.","Justifier un classement avec un vocabulaire adapté."],
+    ["Objectivation et réinvestissement","Distribuer un nouveau lot de formes et demander un classement puis un assemblage différent.","Réalisent une nouvelle composition et expliquent leurs choix.","Réinvestir le tri et l'assemblage dans une tâche nouvelle."]
+   ], trace:"On peut classer des formes en regroupant celles qui se ressemblent. On peut aussi les assembler pour créer une image ou un motif.", exercise:"1. Regroupe les formes qui se ressemblent.__EXERCISE_NL__2. Nomme les formes que tu connais.__EXERCISE_NL__3. Assemble des formes pour réaliser une maison ou un autre dessin.", correction:"Le classement doit suivre un critère visible et cohérent. La composition peut varier si les formes sont correctement utilisées."
+  },
+  "Reproduire un assemblage de formes":{
+   objective:"Observer un modèle composé de plusieurs formes, repérer leur disposition et reproduire l'assemblage.", prerequisite:"Reconnaître et manipuler des formes simples ; se repérer dans une disposition spatiale.", material:"Modèles illustrés, formes découpées, feuilles, crayons et supports de manipulation.",
+   situation:"L'enseignant présente une figure composée de formes simples et demande aux apprenants de la reconstruire avec des pièces séparées.",
+   stages:[
+    ["Introduction","Présenter un assemblage modèle et laisser les apprenants observer ses différentes parties.","Observent et décrivent les formes et leur disposition.","Repérer les éléments qui composent le modèle."],
+    ["Manipulation concrète","Distribuer les formes nécessaires et guider l'observation de leur position et de leur orientation.","Choisissent les pièces et les placent pour reproduire le modèle.","Reconstituer l'assemblage par manipulation."],
+    ["Représentation","Faire dessiner ou coller l'assemblage obtenu, puis comparer avec le modèle.","Reproduisent l'assemblage et vérifient les positions.","Représenter fidèlement une composition simple."],
+    ["Abstraction / verbalisation","Faire expliquer les étapes : choisir les formes, les placer et vérifier leur disposition.","Décrivent leur démarche avec des mots simples.","Expliquer comment reproduire un modèle."],
+    ["Objectivation et réinvestissement","Proposer un autre modèle adapté et demander une reproduction autonome.","Reproduisent le nouvel assemblage et contrôlent leur travail.","Transférer la démarche à un nouveau modèle."]
+   ], trace:"Pour reproduire un assemblage, j'observe le modèle, je reconnais les formes, je les place comme sur le modèle et je vérifie le résultat.", exercise:"1. Observe un modèle composé de formes.__EXERCISE_NL__2. Reconstitue-le avec les pièces proposées.__EXERCISE_NL__3. Dessine ou colle ton assemblage.", correction:"L'assemblage attendu doit reprendre les formes et leur disposition générale. Accepter les différences de taille si elles ne sont pas l'objet de l'activité."
   }
  },
  "Mesures":{
@@ -482,7 +538,7 @@ const MATH_CI = {
     ["Représentation","Faire dessiner ou classer les objets du plus court au plus long.","Dessinent ou classent les bandes.","Représenter le résultat de la comparaison."],
     ["Abstraction / verbalisation","Faire employer les mots long et court dans des phrases simples.","Décrivent les objets avec les mots étudiés.","Employer le vocabulaire de longueur."],
     ["Objectivation et réinvestissement","Faire comparer d'autres objets de la classe.","Comparent et justifient leur choix.","Réinvestir la comparaison des longueurs."]
-   ], trace:"Pour comparer deux longueurs, je place les objets au même point de départ. Je peux dire qu'un objet est long ou court.", exercise:"1. Compare deux crayons.\n2. Montre la bande la plus courte.\n3. Classe trois bandes de la plus courte à la plus longue.", correction:"Les objets doivent être alignés au même point de départ avant la comparaison."
+   ], trace:"Pour comparer deux longueurs, je place les objets au même point de départ. Je peux dire qu'un objet est long ou court.", exercise:"1. Compare deux crayons.__EXERCISE_NL__2. Montre la bande la plus courte.__EXERCISE_NL__3. Classe trois bandes de la plus courte à la plus longue.", correction:"Les objets doivent être alignés au même point de départ avant la comparaison."
   },
   "Comparer des masses : lourd et léger":{
    objective:"Comparer la masse de deux objets par manipulation et employer lourd et léger.", prerequisite:"Manipuler des objets et exprimer une comparaison simple.", material:"Objets de masses différentes, balance à plateaux si disponible, sacs et boîtes.",
@@ -493,7 +549,7 @@ const MATH_CI = {
     ["Représentation","Faire associer les objets à des images ou dessins représentant lourd et léger.","Classent les dessins selon la comparaison réalisée.","Représenter la comparaison de masses."],
     ["Abstraction / verbalisation","Faire formuler des phrases avec lourd et léger.","Décrivent les objets en utilisant les mots étudiés.","Employer correctement le vocabulaire."],
     ["Objectivation et réinvestissement","Proposer une autre paire d'objets à comparer.","Comparent et expliquent leur réponse.","Réinvestir la comparaison de masses."]
-   ], trace:"On peut comparer la masse de deux objets en les soupesant ou avec une balance. On emploie les mots lourd et léger.", exercise:"1. Compare deux objets en les soupesant.\n2. Montre l'objet le plus lourd.\n3. Emploie les mots lourd et léger dans deux phrases.", correction:"La réponse doit être cohérente avec la comparaison réelle ; ne pas confondre taille et masse."
+   ], trace:"On peut comparer la masse de deux objets en les soupesant ou avec une balance. On emploie les mots lourd et léger.", exercise:"1. Compare deux objets en les soupesant.__EXERCISE_NL__2. Montre l'objet le plus lourd.__EXERCISE_NL__3. Emploie les mots lourd et léger dans deux phrases.", correction:"La réponse doit être cohérente avec la comparaison réelle ; ne pas confondre taille et masse."
   },
   "Comparer des contenances : plein et vide":{
    objective:"Distinguer un récipient plein d'un récipient vide ou contenant moins de liquide.", prerequisite:"Observer des récipients et suivre une consigne simple.", material:"Bouteilles transparentes, gobelets, eau, bassines et images.",
@@ -504,7 +560,7 @@ const MATH_CI = {
     ["Représentation","Faire associer les récipients réels à des dessins de récipients pleins et vides.","Classent les images et les décrivent.","Associer l'expérience à une représentation."],
     ["Abstraction / verbalisation","Faire utiliser les mots plein et vide, puis comparer des récipients contenant plus ou moins.","Formulent des phrases de comparaison.","Employer le vocabulaire de contenance étudié."],
     ["Objectivation et réinvestissement","Faire décrire des récipients dans une nouvelle situation.","Identifient et décrivent les contenances.","Réutiliser les mots étudiés dans la vie courante."]
-   ], trace:"Un récipient peut être plein ou vide. On peut comparer ce que contiennent deux récipients en observant ou en transvasant leur contenu.", exercise:"1. Montre le récipient plein.\n2. Montre le récipient vide.\n3. Décris deux récipients contenant des quantités différentes.", correction:"Vérifier que l'apprenant distingue correctement les situations et utilise les mots étudiés."
+   ], trace:"Un récipient peut être plein ou vide. On peut comparer ce que contiennent deux récipients en observant ou en transvasant leur contenu.", exercise:"1. Montre le récipient plein.__EXERCISE_NL__2. Montre le récipient vide.__EXERCISE_NL__3. Décris deux récipients contenant des quantités différentes.", correction:"Vérifier que l'apprenant distingue correctement les situations et utilise les mots étudiés."
   },
   "Se repérer dans le temps : matin, midi et soir":{
    objective:"Identifier des moments de la journée et les associer à des activités familières.", prerequisite:"Raconter une activité vécue et observer des images.", material:"Images d'activités quotidiennes, frise de la journée et cartes illustrées.",
@@ -515,7 +571,7 @@ const MATH_CI = {
     ["Représentation","Construire une frise illustrée de la journée.","Plaçent les images dans l'ordre de la journée.","Représenter une succession de moments."],
     ["Abstraction / verbalisation","Faire nommer matin, midi et soir et formuler des phrases.","Nomment les moments et décrivent les activités.","Employer les repères temporels étudiés."],
     ["Objectivation et réinvestissement","Demander de raconter une journée en utilisant les mots étudiés.","Racontent une courte succession d'activités.","Réinvestir les repères dans une situation personnelle."]
-   ], trace:"Dans la journée, on distingue notamment le matin, le midi et le soir. Certaines activités se déroulent à des moments habituels.", exercise:"1. Classe les images du matin, du midi et du soir.\n2. Cite une activité du matin.\n3. Raconte une activité du soir.", correction:"Les images sont classées selon le moment représenté ; accepter les variations d'habitudes familiales lorsqu'elles sont cohérentes."
+   ], trace:"Dans la journée, on distingue notamment le matin, le midi et le soir. Certaines activités se déroulent à des moments habituels.", exercise:"1. Classe les images du matin, du midi et du soir.__EXERCISE_NL__2. Cite une activité du matin.__EXERCISE_NL__3. Raconte une activité du soir.", correction:"Les images sont classées selon le moment représenté ; accepter les variations d'habitudes familiales lorsqu'elles sont cohérentes."
   }
  }
 };
@@ -622,7 +678,9 @@ function generate(){
   out+=`<div class="fiche-section"><h3>Déroulement de la séance</h3>${renderTable(stages,total)}</div>`;
  }
  const trace=special?special.trace:(mathLesson?mathLesson.trace:`À retenir : ${notion} — retenir la notion, la démarche ou la règle construite pendant la séance.`);
- const ex=special?special.exercise:(mathLesson?mathLesson.exercise:`1. Proposer une tâche simple de reconnaissance ou d'application de « ${notion} ».\n2. Réaliser un exercice d'application adapté au niveau.\n3. Expliquer la démarche utilisée.`);
+ const ex=special?special.exercise:(mathLesson?mathLesson.exercise:`1. Proposer une tâche simple de reconnaissance ou d'application de « ${notion} ».
+2. Réaliser un exercice d'application adapté au niveau.
+3. Expliquer la démarche utilisée.`);
  const corr=special?special.correction:(mathLesson?mathLesson.correction:"Correction attendue : réponses exactes, démarche compréhensible et justification adaptée au niveau.");
  if(type==="resume"||type==="pack")out+=section("Résumé / trace écrite",trace);
  if(type==="exercices"||type==="pack")out+=section("Exercices d'application",ex)+section("Correction proposée",corr);
